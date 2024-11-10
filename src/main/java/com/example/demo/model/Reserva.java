@@ -5,17 +5,17 @@ import java.security.Timestamp;
 public class Reserva {
     private int id_Reserva;
     private String cpf_Cliente;
+    private int id_Pacote;
     private Timestamp data;
-    private int codigo_Pacote;
     private int quantidade_vagas;
 
     public Reserva() {}
 
-    public Reserva(int id_Reserva, String cpf_Cliente, Timestamp data, int codigo_Pacote, int quantidade_vagas){
+    public Reserva(int id_Reserva, String cpf_Cliente, Timestamp data, int id_Pacote, int quantidade_vagas){
         this.id_Reserva = id_Reserva;
         this.cpf_Cliente = cpf_Cliente;
+        this.id_Pacote = id_Pacote;
         this.data = data;
-        this.codigo_Pacote = codigo_Pacote;
         this.quantidade_vagas = quantidade_vagas;
     }
 
@@ -31,8 +31,8 @@ public class Reserva {
         return data;
     }
 
-    public int getCodigo_Pacote() {
-        return codigo_Pacote;
+    public int getId_Pacote() {
+        return id_Pacote;
     }
 
     public int getQuantidade_vagas() {
@@ -51,8 +51,8 @@ public class Reserva {
         this.data = data;
     }
 
-    public void setCodigo_Pacote(int codigo_Pacote) {
-        this.codigo_Pacote = codigo_Pacote;
+    public void setId_Pacote(int id_Pacote) {
+        this.id_Pacote = id_Pacote;
     }
 
     public void setQuantidade_vagas(int quantidade_vagas) {

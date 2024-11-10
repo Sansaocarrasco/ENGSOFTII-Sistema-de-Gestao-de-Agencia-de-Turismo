@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.Login;
 import com.example.demo.Opcoes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,6 +47,7 @@ public class LoginController implements Initializable {
             if (usernameTextField.getText().equals("joaopedro") && passwordTextField.getText().equals("123")) {
                 System.out.println("Logado");
                 Opcoes opcoes = new Opcoes();
+
                 try {
                     opcoes.start(new Stage());
                 } catch (IOException e) {
