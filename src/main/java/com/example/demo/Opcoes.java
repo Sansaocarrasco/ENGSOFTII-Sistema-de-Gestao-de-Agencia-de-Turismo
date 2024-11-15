@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Opcoes extends Application {
-    private static Stage stage;// Minha janela
+    public static Stage stage;// Minha janela
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -25,7 +25,7 @@ public class Opcoes extends Application {
     }
 
     public static void setStage(Stage stage) {
-        Login.stage = stage;
+        Opcoes.stage = stage;
     }
 
     public static void main(String[] args) {

@@ -1,32 +1,45 @@
 package com.example.demo.controller;
 
-import com.example.demo.Login;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class OpcoesController {
+import static com.example.demo.Opcoes.stage;
 
-    @FXML
-    private Button sairButton;
+public class OpcoesController implements Initializable {
 
     @FXML
-    private void initialize() {
-        sairButton.setOnMouseClicked(event -> {
-            try {
-                // Voltar para a tela de login (ou qualquer outra tela desejada)
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo/view/login.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-                Stage stage = Login.getStage(); // Obtém a janela principal (Stage)
-                stage.setScene(scene); // Muda para a nova cena
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    private Button cadastroClienteButton;
+    @FXML
+    private Button reservaPacoteButton;
+    @FXML
+    private Button cadastroPacoteButton;
+    @FXML
+    private Button relatorioReservaButton;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        cadastroClienteButton.setOnMouseClicked((MouseEvent event) -> {
+                fecha();
         });
+        reservaPacoteButton.setOnMouseClicked((MouseEvent event) -> {
+            fecha();
+        });
+        cadastroPacoteButton.setOnMouseClicked((MouseEvent event) -> {
+            fecha();
+        });
+
+        relatorioReservaButton.setOnMouseClicked((MouseEvent event) -> {
+            fecha();
+        });
+    }
+
+    private void fecha() {
+        stage.close();
     }
 }
