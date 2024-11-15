@@ -1,49 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      alignment="CENTER" spacing="15" style="-fx-padding: 20; -fx-background-color: #2b2b2b;" fx:controller="com.example.demo.controller.CadastroClienteController">
+<VBox alignment="CENTER" spacing="15" style="-fx-padding: 20; -fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controller.CadastroPacoteController">
     <!-- Título da tela -->
-    <Label text="Cadastro de Pacote Turístico" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" />
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="Cadastro de Pacote Turístico" />
 
     <GridPane hgap="10" vgap="10">
         <columnConstraints>
-            <ColumnConstraints halignment="RIGHT"/>
-            <ColumnConstraints hgrow="ALWAYS"/>
+            <ColumnConstraints halignment="RIGHT" />
+            <ColumnConstraints hgrow="ALWAYS" />
         </columnConstraints>
 
         <!-- Labels e Campos de Texto -->
-        <Label text="Nome do Pacote:" style="-fx-text-fill: white;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="nomePacoteField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label style="-fx-text-fill: white;" text="Nome do Pacote:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="nomePacoteTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-        <Label text="Destino:" style="-fx-text-fill: white;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <TextField fx:id="destinoField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label style="-fx-text-fill: white;" text="Destino:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="destinoTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-        <Label text="Data de Início:" style="-fx-text-fill: white;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="dataInicioPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label style="-fx-text-fill: white;" text="Data de Início:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <DatePicker fx:id="dataInicioPicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-        <Label text="Data de Fim:" style="-fx-text-fill: white;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="dataFimPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label style="-fx-text-fill: white;" text="Data de Fim:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <DatePicker fx:id="dataFimPicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-        <Label text="Preço:" style="-fx-text-fill: white;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-        <TextField fx:id="precoField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label style="-fx-text-fill: white;" text="Preço:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="precoTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-        <Label text="Número de Vagas:" style="-fx-text-fill: white;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-        <TextField fx:id="vagasField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Label style="-fx-text-fill: white;" text="Número de Vagas:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <TextField fx:id="vagasTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-        <Label text="Inclui Transporte?" style="-fx-text-fill: white;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
-        <CheckBox fx:id="transporteCheckBox" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+        <Label style="-fx-text-fill: white;" text="Inclui Transporte?" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <CheckBox fx:id="transporteCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
-        <Label text="Hospedagem:" style="-fx-text-fill: white;" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
-        <TextField fx:id="hospedagemField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+        <Label style="-fx-text-fill: white;" text="Hospedagem:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <TextField fx:id="hospedagemTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-        <Label text="Atividades Inclusas:" style="-fx-text-fill: white;" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
-        <TextArea fx:id="atividadesField" GridPane.rowIndex="8" GridPane.columnIndex="1" prefRowCount="3"/>
+        <Label style="-fx-text-fill: white;" text="Atividades Inclusas:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+        <TextArea fx:id="atividadesTextArea" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
     </GridPane>
 
     <!-- Botão de Cadastrar -->
-    <Button text="Cadastrar Pacote" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;" />
+    <Button fx:id="cadastrarPacoteButton" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;" text="Cadastrar Pacote" />
 </VBox>

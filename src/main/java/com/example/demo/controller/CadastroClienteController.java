@@ -1,41 +1,63 @@
 package com.example.demo.controller;
 
+import com.example.demo.CadastroCliente;
+import com.example.demo.Opcoes;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
 
-public class CadastroClienteController {
+import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.example.demo.CadastroCliente.stage;
+
+public class CadastroClienteController implements Initializable {
 
     @FXML
-    private TextField nomeCompletoField;
+    private Button cadastrarClienteButton;
 
     @FXML
-    private TextField cpfField;
+    private TextField nomeTextField;
+
+    @FXML
+    private TextField cpfTextField;
 
     @FXML
     private DatePicker dataNascimentoPicker;
 
     @FXML
-    private TextField emailField;
+    private TextField emailTextField;
 
     @FXML
-    private TextField telefoneField;
+    private TextField telefoneTextField;
 
     @FXML
-    private TextArea enderecoField;
+    private TextArea enderecoTextArea;
 
-    @FXML
-    private void cadastrarCliente() {
-        String nomeCompleto = nomeCompletoField.getText();
-        String cpf = cpfField.getText();
-        String dataNascimento = (dataNascimentoPicker.getValue() != null) ? dataNascimentoPicker.getValue().toString() : "";
-        String email = emailField.getText();
-        String telefone = telefoneField.getText();
-        String endereco = enderecoField.getText();
-
-        System.out.println("Cliente cadastrado: " + nomeCompleto + ", CPF: " + cpf);
-        System.out.println("Data de Nascimento: " + dataNascimento + ", E-mail: " + email);
-        System.out.println("Telefone: " + telefone + ", Endereço: " + endereco);
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        cadastrarClienteButton.setOnMouseClicked((MouseEvent event) -> {
+            // Fazer a função de enviar as credenciais do cliente para o banco de dados.
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Notificação");
+            alert.setHeaderText(null);
+            alert.setContentText("O Cliente foi cadastrado com sucesso na base de dados do Travel Manager!");
+            alert.show();
+            fecha();
+        });
+    }
+    private void fecha() {
+        stage.close();
     }
 }

@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static com.example.demo.Login.stage;
+import static com.example.demo.Main.stage;
 
 public class LoginController implements Initializable {
 

@@ -1,18 +1,37 @@
 package com.example.demo.controller;
 
+import com.example.demo.CadastroCliente;
+import com.example.demo.Opcoes;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
 
-public class CadastroPacoteController {
+import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.example.demo.CadastroPacote.stage;
+
+public class CadastroPacoteController implements Initializable {
 
     @FXML
-    private TextField nomePacoteField;
+    private Button cadastrarPacoteButton;
 
     @FXML
-    private TextField destinoField;
+    private TextField nomePacoteTextField;
+
+    @FXML
+    private TextField destinoTextField;
 
     @FXML
     private DatePicker dataInicioPicker;
@@ -21,35 +40,33 @@ public class CadastroPacoteController {
     private DatePicker dataFimPicker;
 
     @FXML
-    private TextField precoField;
+    private TextField precoTextField;
 
     @FXML
-    private TextField vagasField;
+    private TextField vagasTextField;
 
     @FXML
     private CheckBox transporteCheckBox;
 
     @FXML
-    private TextField hospedagemField;
+    private TextField hospedagemTextField;
 
     @FXML
-    private TextArea atividadesField;
+    private TextArea atividadesTextArea;
 
-    @FXML
-    private void cadastrarPacote() {
-        String nomePacote = nomePacoteField.getText();
-        String destino = destinoField.getText();
-        String dataInicio = (dataInicioPicker.getValue() != null) ? dataInicioPicker.getValue().toString() : "";
-        String dataFim = (dataFimPicker.getValue() != null) ? dataFimPicker.getValue().toString() : "";
-        String preco = precoField.getText();
-        String vagas = vagasField.getText();
-        boolean incluiTransporte = transporteCheckBox.isSelected();
-        String hospedagem = hospedagemField.getText();
-        String atividades = atividadesField.getText();
-
-        System.out.println("Pacote cadastrado: " + nomePacote + ", Destino: " + destino);
-        System.out.println("Data de Início: " + dataInicio + ", Data de Fim: " + dataFim);
-        System.out.println("Preço: " + preco + ", Vagas: " + vagas + ", Inclui Transporte: " + incluiTransporte);
-        System.out.println("Hospedagem: " + hospedagem + ", Atividades: " + atividades);
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        cadastrarPacoteButton.setOnMouseClicked((MouseEvent event) -> {
+            // Fazer a função de enviar as credenciais do pacote para o banco de dados.
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Notificação");
+            alert.setHeaderText(null);
+            alert.setContentText("O Pacote foi cadastrado com sucesso na base de dados do Travel Manager!");
+            alert.show();
+            fecha();
+        });
+    }
+    private void fecha() {
+        stage.close();
     }
 }

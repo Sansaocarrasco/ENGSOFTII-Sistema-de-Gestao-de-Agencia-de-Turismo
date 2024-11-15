@@ -54,6 +54,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CadastroCliente.executor": "Run",
     "Application.Control.executor": "Run",
     "Application.Control2.executor": "Run",
     "Application.HelloApplication.executor": "Run",
@@ -92,7 +93,20 @@
       <recent name="com.example.demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.example.demo.Login">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="CadastroCliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.CadastroCliente" />
+      <module name="loginscreen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.windows.Login" />
       <module name="loginscreen" />
@@ -106,8 +120,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Opcoes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.Opcoes" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.Main" />
       <module name="loginscreen" />
       <extension name="coverage">
         <pattern>
@@ -119,8 +133,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.example.demo.Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.Login" />
+    <configuration name="Opcoes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.Opcoes" />
       <module name="loginscreen" />
       <extension name="coverage">
         <pattern>
@@ -147,7 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.example.demo.Login" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.CadastroCliente" />
         <item itemvalue="Application.Opcoes" />
         <item itemvalue="Application.Login" />
       </list>
@@ -184,7 +199,7 @@
       <workItem from="1731360210113" duration="3458000" />
       <workItem from="1731627268913" duration="5485000" />
       <workItem from="1731639124508" duration="1921000" />
-      <workItem from="1731690952142" duration="5688000" />
+      <workItem from="1731690952142" duration="10955000" />
     </task>
     <task id="LOCAL-00001" summary="fix: bug modules">
       <option name="closed" value="true" />
