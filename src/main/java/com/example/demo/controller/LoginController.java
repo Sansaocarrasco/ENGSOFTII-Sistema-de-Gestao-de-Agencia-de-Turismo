@@ -4,7 +4,9 @@ import com.example.demo.Login;
 import com.example.demo.Opcoes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -49,9 +51,13 @@ public class LoginController implements Initializable {
                 Opcoes opcoes = new Opcoes();
 
                 try {
-                    opcoes.start(new Stage());
+                    // Carregar a tela de login novamente ou qualquer outra tela
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/login.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+                    Stage stage = Login.getStage(); // Obtém a janela principal (Stage)
+                    stage.setScene(scene); // Muda para a nova cena
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
 
             }
@@ -63,8 +69,7 @@ public class LoginController implements Initializable {
 
     public void loginButtonOnAction(ActionEvent event) {
         if (usernameTextField.getText().equals("joaopedro") && passwordTextField.getText().equals("123")) {
-            Stage stage = (Stage) cancelButton.getScene().getWindow();
-            stage.close();
+            System.out.println("Logado");
         }
     }
 

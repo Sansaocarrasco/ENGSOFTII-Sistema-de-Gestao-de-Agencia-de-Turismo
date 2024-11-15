@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml " fx:controller="com.example.demo.controller.CadastroClienteController"
+      alignment="CENTER" spacing="15" style="-fx-padding: 20; -fx-background-color: #2b2b2b;">
+    <!-- Título da tela -->
+    <Label text="Cadastro de Cliente" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <!-- Labels e Campos de Texto -->
+        <Label text="Nome Completo:" style="-fx-text-fill: white;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nomeCompletoField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="CPF:" style="-fx-text-fill: white;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="cpfField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Data de Nascimento:" style="-fx-text-fill: white;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dataNascimentoPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="E-mail:" style="-fx-text-fill: white;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="emailField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Telefone:" style="-fx-text-fill: white;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="telefoneField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Endereço Completo:" style="-fx-text-fill: white;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextArea fx:id="enderecoField" GridPane.rowIndex="5" GridPane.columnIndex="1" prefRowCount="3"/>
+    </GridPane>
+
+    <!-- Botão de Cadastrar -->
+    <Button text="Cadastrar Cliente" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;" />
+</VBox>

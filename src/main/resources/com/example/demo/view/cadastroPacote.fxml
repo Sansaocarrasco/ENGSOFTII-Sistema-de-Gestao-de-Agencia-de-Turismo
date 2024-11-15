@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER" spacing="15" style="-fx-padding: 20; -fx-background-color: #2b2b2b;" fx:controller="com.example.demo.controller.CadastroClienteController">
+    <!-- Título da tela -->
+    <Label text="Cadastro de Pacote Turístico" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <!-- Labels e Campos de Texto -->
+        <Label text="Nome do Pacote:" style="-fx-text-fill: white;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nomePacoteField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Destino:" style="-fx-text-fill: white;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="destinoField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Data de Início:" style="-fx-text-fill: white;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dataInicioPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Data de Fim:" style="-fx-text-fill: white;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dataFimPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Preço:" style="-fx-text-fill: white;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="precoField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Número de Vagas:" style="-fx-text-fill: white;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="vagasField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Inclui Transporte?" style="-fx-text-fill: white;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <CheckBox fx:id="transporteCheckBox" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Label text="Hospedagem:" style="-fx-text-fill: white;" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <TextField fx:id="hospedagemField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Atividades Inclusas:" style="-fx-text-fill: white;" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <TextArea fx:id="atividadesField" GridPane.rowIndex="8" GridPane.columnIndex="1" prefRowCount="3"/>
+    </GridPane>
+
+    <!-- Botão de Cadastrar -->
+    <Button text="Cadastrar Pacote" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;" />
+</VBox>
