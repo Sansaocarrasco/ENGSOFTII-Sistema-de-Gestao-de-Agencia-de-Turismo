@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.univasf.controller.OpcoesController">
+   <children>
+      <Button fx:id="cadastroClienteButton" layoutX="80.0" layoutY="95.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Cadastro de Cliente">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="225.0" layoutY="34.0" text="Menu de Opções">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="reservaPacoteButton" layoutX="80.0" layoutY="226.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Reserva de Pacote">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="cadastroPacoteButton" layoutX="328.0" layoutY="95.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Cadastro de Pacote">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="relatorioReservaButton" layoutX="328.0" layoutY="226.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Relatório de Reserva">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

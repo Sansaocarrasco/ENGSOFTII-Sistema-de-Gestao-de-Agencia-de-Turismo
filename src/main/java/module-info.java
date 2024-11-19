@@ -4,9 +4,9 @@ module com.example.demo {
     requires java.sql;
     requires java.desktop;
 
-    opens com.example.demo to javafx.fxml;
-    exports com.example.demo;
+    opens br.edu.univasf to javafx.fxml;
+    exports br.edu.univasf;
 
-    opens com.example.demo.controller to javafx.fxml;
-    exports com.example.demo.controller;
+    opens br.edu.univasf.controller to javafx.fxml;
+    exports br.edu.univasf.controller;
 }
