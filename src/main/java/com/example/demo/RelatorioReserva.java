@@ -5,15 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 
-public class Login extends Application {
+public class RelatorioReserva extends Application {
     public static Stage stage;// Minha janela
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("view/login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        FXMLLoader fxmlLoader = new FXMLLoader(RelatorioReserva.class.getResource("view/relatorioReserva.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 400);
         stage.setTitle("Travel Manager");
         stage.setScene(scene);
         stage.show();
@@ -25,7 +26,7 @@ public class Login extends Application {
     }
 
     public static void setStage(Stage stage) {
-        Login.stage = stage;
+        RelatorioReserva.stage = stage;
     }
 
     public static void main(String[] args) {

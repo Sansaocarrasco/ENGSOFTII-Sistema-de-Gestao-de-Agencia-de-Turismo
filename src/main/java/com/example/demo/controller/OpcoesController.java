@@ -1,9 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.CadastroCliente;
-import com.example.demo.CadastroPacote;
-import com.example.demo.Opcoes;
-import com.example.demo.ReservaPacote;
+import com.example.demo.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
@@ -38,7 +35,7 @@ public class OpcoesController implements Initializable {
             try {
                 cadastroCliente.start(new Stage());
             } catch (IOException e) {
-                Logger.getLogger(CadastroClienteController.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(OpcoesController.class.getName()).log(Level.SEVERE, null, e);
             }
         });
         reservaPacoteButton.setOnMouseClicked((MouseEvent event) -> {
@@ -47,7 +44,7 @@ public class OpcoesController implements Initializable {
             try {
                 reservaPacote.start(new Stage());
             } catch (IOException e) {
-                Logger.getLogger(ReservaPacoteController.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(OpcoesController.class.getName()).log(Level.SEVERE, null, e);
             }
         });
         cadastroPacoteButton.setOnMouseClicked((MouseEvent event) -> {
@@ -56,13 +53,18 @@ public class OpcoesController implements Initializable {
             try {
                 cadastroPacote.start(new Stage());
             } catch (IOException e) {
-                Logger.getLogger(CadastroPacoteController.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(OpcoesController.class.getName()).log(Level.SEVERE, null, e);
             }
         });
 
         relatorioReservaButton.setOnMouseClicked((MouseEvent event) -> {
-            // Ta faltando
+            RelatorioReserva relatorioReserva = new RelatorioReserva();
             fecha();
+            try {
+                relatorioReserva.start(new Stage());
+            } catch (IOException e) {
+                Logger.getLogger(OpcoesController.class.getName()).log(Level.SEVERE, null, e);
+            }
         });
     }
 

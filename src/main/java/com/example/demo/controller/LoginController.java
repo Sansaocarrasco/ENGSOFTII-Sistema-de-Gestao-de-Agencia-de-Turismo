@@ -8,13 +8,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
@@ -42,9 +40,6 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File brandingFile = new File("Images/logo.png");
-        Image brandingImage = new Image(brandingFile.toURI().toString());
-        brandingImageView.setImage(brandingImage);
 
         loginButton.setOnMouseClicked((MouseEvent event) -> {
             if (usernameTextField.getText().equals("joaopedro") && passwordTextField.getText().equals("123")) {
@@ -58,7 +53,7 @@ public class LoginController implements Initializable {
 
             }
             else {
-                loginMessageLabel.setText("Usuário ou senha errados. Tente Novamente!");
+                loginMessageLabel.setText("Usuário ou senha Invalidos!");
             }
         });
     }
