@@ -1,82 +1,92 @@
 package br.edu.univasf.model;
-
 import java.util.Date;
 
 public class Pacote {
-    private int id_Pacote;
-    private String nome_Pacote;
-    private float preco;
+    private Integer id;
+    private Integer duracao;
+    private Double preco;
+    private String nome;
     private String descricao;
-    private Date dataP;
-    private float desconto;
-    private int quantidade_vagas_totais;
+    private String destino;
+    private Boolean disponibilidade;
 
-    public Pacote() {
+    Pacote(){
+
     }
 
-    public Pacote(int id_Pacote, String nome_Pacote, float preco, String info, Date data, float desconto, int quantidade_vagas_totais) {
-        this.id_Pacote = id_Pacote;
-        this.nome_Pacote = nome_Pacote;
+    public Pacote(Integer duracao, Double preco, String nome, String descricao, String destino, Boolean disponibilidade) {
+        this.duracao = duracao;
         this.preco = preco;
-        this.descricao = info;
-        this.dataP = data;
-        this.desconto = desconto;
-        this.quantidade_vagas_totais = quantidade_vagas_totais;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.destino = destino;
+        this.disponibilidade = disponibilidade;
     }
 
-    public int getId_Pacote() {
-        return id_Pacote;
+    Pacote(Integer id, String nome, String descricao, Double preco, String destino, Integer duracao, Boolean disponibilidade)
+    {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.destino = destino;
+        this.duracao = duracao;
+        this.disponibilidade = disponibilidade;
     }
 
-    public String getNome_Pacote() {
-        return nome_Pacote;
+    public Integer getId() {
+        return id;
     }
 
-    public double getPreco() {
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(Integer duracao) {
+        this.duracao = duracao;
+    }
+
+    public Double getPreco() {
         return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public Date getDataP() {
-        return dataP;
-    }
-
-    public float getDesconto() {
-        return desconto;
-    }
-
-    public int getQuantidade_vagas_totais() {
-        return quantidade_vagas_totais;
-    }
-
-    public void setId_Pacote(int id_Pacote) {
-        this.id_Pacote = id_Pacote;
-    }
-
-    public void setNome_Pacote(String nome_Pacote) {
-        this.nome_Pacote = nome_Pacote;
-    }
-
-    public void setPreco(float preco) {
-        this.preco = preco;
-    }
-
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
-    public void setDataP(Date dataP) {
-        this.dataP = dataP;
+    public String getDestino() {
+        return destino;
     }
 
-    public void setDesconto(float desconto) {
-        this.desconto = desconto;
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
 
-    public void setQuantidade_vagas_totais(int quantidade_vagas_totais) {
-        this.quantidade_vagas_totais = quantidade_vagas_totais;
+    public Boolean getDisponibilidade() {
+        return disponibilidade;
+    }
+
+    public void setDisponibilidade(Boolean disponibilidade) {
+        this.disponibilidade = disponibilidade;
     }
 }

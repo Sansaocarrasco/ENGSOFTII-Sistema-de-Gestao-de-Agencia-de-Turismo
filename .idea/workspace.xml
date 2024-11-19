@@ -4,7 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="new: modules" />
+    <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="new: modules">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/ConnectionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/CreateTables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/pacoteDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/pessoaDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/reservaDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Pacote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Pacote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Pacote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Pacote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Reserva.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Reserva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/CadastroCliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/CadastroPacote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Opcoes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/RelatorioReserva.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ReservaPacote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/CadastroClienteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/CadastroPacoteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/OpcoesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/RelatorioReservaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/ReservaPacoteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Cliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Pacote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Reserva.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/view/cadastroCliente.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/view/cadastroPacote.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/view/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/view/opcoes.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/view/relatorioReserva.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/view/reservaPacote.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +87,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2oPOFq6yziFWD0zm7rR9oF8dUpL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -70,7 +109,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "23",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/joaop/IdeaProjects/agencia_turismo/IdeaProjects/demo9",
+    "last_opened_file_path": "B:/Downloads/postgresql-42.7.4.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -219,6 +258,8 @@
       <workItem from="1731639124508" duration="1921000" />
       <workItem from="1731690952142" duration="11095000" />
       <workItem from="1731968100418" duration="8626000" />
+      <workItem from="1731978818241" duration="1365000" />
+      <workItem from="1731983481621" duration="818000" />
     </task>
     <task id="LOCAL-00001" summary="fix: bug modules">
       <option name="closed" value="true" />

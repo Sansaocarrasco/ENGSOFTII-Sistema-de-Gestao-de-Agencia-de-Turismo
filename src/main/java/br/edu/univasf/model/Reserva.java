@@ -1,63 +1,81 @@
 package br.edu.univasf.model;
 
-import java.security.Timestamp;
+import java.sql.Date;
 
 public class Reserva {
-    private int id_Reserva;
-    private String cpf_Cliente;
-    private int id_Pacote;
-    private Timestamp data;
-    private int quantidade_vagas;
+    private Integer reservaID;
+    private Integer pkfkClienteId;
+    private Integer pkfkPacoteID;
+    private Date datareserva;
+    private Integer parcelas;
+    private String formaPagamento;
 
-    public Reserva() {}
-
-    public Reserva(int id_Reserva, String cpf_Cliente, Timestamp data, int id_Pacote, int quantidade_vagas){
-        this.id_Reserva = id_Reserva;
-        this.cpf_Cliente = cpf_Cliente;
-        this.id_Pacote = id_Pacote;
-        this.data = data;
-        this.quantidade_vagas = quantidade_vagas;
+    public Reserva(Integer pkfkClienteId, Integer pkfkPacoteID, Date datareserva, Integer parcelas, String formaPagamento) {
+        this.pkfkClienteId = pkfkClienteId;
+        this.pkfkPacoteID = pkfkPacoteID;
+        this.datareserva = datareserva;
+        this.parcelas = parcelas;
+        this.formaPagamento = formaPagamento;
     }
 
-    public int getId_Reserva() {
-        return id_Reserva;
+    public Reserva(Integer reservaID, Integer pkfkClienteId, Integer pkfkPacoteID, Date datareserva, Integer parcelas, String formaPagamento) {
+        this.reservaID = reservaID;
+        this.pkfkClienteId = pkfkClienteId;
+        this.pkfkPacoteID = pkfkPacoteID;
+        this.datareserva = datareserva;
+        this.parcelas = parcelas;
+        this.formaPagamento = formaPagamento;
     }
 
-    public String getCpf_Cliente() {
-        return cpf_Cliente;
+    public Integer getReservaID() {
+        return reservaID;
     }
 
-    public Timestamp getData() {
-        return data;
+    public void setReservaID(Integer reservaID) {
+        this.reservaID = reservaID;
     }
 
-    public int getId_Pacote() {
-        return id_Pacote;
+    public Integer getPkfkClienteId() {
+        return pkfkClienteId;
     }
 
-    public int getQuantidade_vagas() {
-        return quantidade_vagas;
+    public void setPkfkClienteId(Integer pkfkClienteId) {
+        this.pkfkClienteId = pkfkClienteId;
     }
 
-    public void setId_Reserva(int id_Reserva) {
-        this.id_Reserva = id_Reserva;
+    public Integer getPkfkPacoteID() {
+        return pkfkPacoteID;
     }
 
-    public void setCpf_Cliente(String cpf_Cliente) {
-        this.cpf_Cliente = cpf_Cliente;
+    public void setPkfkPacoteID(Integer pkfkPacoteID) {
+        this.pkfkPacoteID = pkfkPacoteID;
     }
 
-    public void setData(Timestamp data) {
-        this.data = data;
+    public Date getDatareserva() {
+        return datareserva;
     }
 
-    public void setId_Pacote(int id_Pacote) {
-        this.id_Pacote = id_Pacote;
+    public void setDatareserva(Date datareserva) {
+        this.datareserva = datareserva;
     }
 
-    public void setQuantidade_vagas(int quantidade_vagas) {
-        this.quantidade_vagas = quantidade_vagas;
+    public Integer getParcelas() {
+        return parcelas;
+    }
+
+    public void setParcelas(Integer parcelas) {
+        this.parcelas = parcelas;
+    }
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
     }
 }
+
+
 
 
