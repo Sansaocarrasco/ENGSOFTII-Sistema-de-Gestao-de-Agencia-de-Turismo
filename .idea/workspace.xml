@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="new: DAO">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroPacoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroPacoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/pacoteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/pacoteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Pacote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Pacote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/CreateTables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/CreateTables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/cadastroPacote.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/cadastroPacote.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="new: case cadastroPacote" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,7 +225,7 @@
       <workItem from="1731978818241" duration="1365000" />
       <workItem from="1731983481621" duration="1397000" />
       <workItem from="1731985070097" duration="131000" />
-      <workItem from="1732023773853" duration="9599000" />
+      <workItem from="1732023773853" duration="9941000" />
     </task>
     <task id="LOCAL-00001" summary="fix: bug modules">
       <option name="closed" value="true" />
@@ -275,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731984510772</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new: case cadastroPacote">
+      <option name="closed" value="true" />
+      <created>1732033985003</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732033985003</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +286,8 @@
     <MESSAGE value="Delete: unused classes" />
     <MESSAGE value="new: modules" />
     <MESSAGE value="new: DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="new: DAO" />
+    <MESSAGE value="new: case cadastroPacote" />
+    <option name="LAST_COMMIT_MESSAGE" value="new: case cadastroPacote" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

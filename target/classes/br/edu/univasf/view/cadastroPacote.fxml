@@ -22,8 +22,8 @@
         </columnConstraints>
 
         <!-- Labels e Campos de Texto -->
-        <Label style="-fx-text-fill: white;" text="Nome do Pacote:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="nomePacoteTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label style="-fx-text-fill: white;" text="Nome do Pacote:" GridPane.columnIndex="0" />
+        <TextField fx:id="nomePacoteTextField" GridPane.columnIndex="1" />
 
         <Label style="-fx-text-fill: white;" text="Destino:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
         <TextField fx:id="destinoTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -46,8 +46,10 @@
         <Label style="-fx-text-fill: white;" text="Hospedagem:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
         <TextField fx:id="hospedagemTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-        <Label style="-fx-text-fill: white;" text="Atividades Inclusas:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+        <Label style="-fx-text-fill: white;" text="Itinerario:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
         <TextArea fx:id="atividadesTextArea" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <Label style="-fx-text-fill: white;" text="Descrição do Pacote:" GridPane.rowIndex="9" />
+      <TextArea fx:id="descricaoTextField" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="9" />
       <rowConstraints>
          <RowConstraints />
          <RowConstraints />
@@ -58,6 +60,7 @@
          <RowConstraints />
          <RowConstraints />
          <RowConstraints />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
       </rowConstraints>
     </GridPane>
 
