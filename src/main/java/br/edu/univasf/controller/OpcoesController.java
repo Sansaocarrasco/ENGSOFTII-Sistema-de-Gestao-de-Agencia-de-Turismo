@@ -12,7 +12,8 @@ import java.util.ResourceBundle;
 import static br.edu.univasf.Main.stage;
 
 public class OpcoesController implements Initializable {
-
+    @FXML
+    public Button sairButton;
     @FXML
     private Button cadastroClienteButton;
     @FXML
@@ -37,6 +38,10 @@ public class OpcoesController implements Initializable {
 
         relatorioReservaButton.setOnMouseClicked((MouseEvent event) -> {
             Main.switchScreen("relatorioReserva");
+        });
+
+        sairButton.setOnMouseClicked((MouseEvent event) -> {
+            fecha();
         });
     }
 

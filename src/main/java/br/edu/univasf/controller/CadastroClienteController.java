@@ -1,5 +1,6 @@
 package br.edu.univasf.controller;
 
+import br.edu.univasf.Main;
 import br.edu.univasf.dao.clienteDAO;  // Importando o DAO
 import br.edu.univasf.model.Cliente;  // Importando o modelo Cliente
 import javafx.event.ActionEvent;
@@ -20,6 +21,9 @@ import java.util.ResourceBundle;
 import static br.edu.univasf.Main.stage;
 
 public class CadastroClienteController implements Initializable {
+
+    @FXML
+    public Button voltarButton;
 
     @FXML
     private Button cadastrarClienteButton;
@@ -70,8 +74,6 @@ public class CadastroClienteController implements Initializable {
                 alert.setContentText("O Cliente foi cadastrado com sucesso na base de dados!");
                 alert.show();
 
-                // Fechar a janela após a inserção
-                fecha();
             } catch (Exception e) {
                 // Exibir alerta de erro se a inserção falhar
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -80,6 +82,10 @@ public class CadastroClienteController implements Initializable {
                 alert.setContentText("Não foi possível cadastrar o cliente no banco de dados.");
                 alert.show();
             }
+        });
+
+        voltarButton.setOnMouseClicked((MouseEvent event) -> {
+            Main.switchScreen("opcoes");
         });
     }
 

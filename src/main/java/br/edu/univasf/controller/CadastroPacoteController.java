@@ -1,5 +1,6 @@
 package br.edu.univasf.controller;
 
+import br.edu.univasf.Main;
 import br.edu.univasf.dao.pacoteDAO;
 import br.edu.univasf.model.Pacote;
 import javafx.event.ActionEvent;
@@ -47,14 +48,14 @@ public class CadastroPacoteController implements Initializable {
     public TextArea descricaoTextField;
 
     @FXML
+    public Button voltarButton;
+
+    @FXML
     private Button cadastrarPacoteButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cadastrarPacoteButton.setOnMouseClicked((MouseEvent event) -> {
-            // Adicionando uma depuração inicial
-            System.out.println("Botão de cadastro clicado!");
-
             try {
                 // Capturar os dados dos campos do formulário
                 String nome = nomePacoteTextField.getText();
@@ -110,8 +111,6 @@ public class CadastroPacoteController implements Initializable {
                 alert.setContentText("O Pacote foi cadastrado com sucesso na base de dados!");
                 alert.show();
 
-                // Fechar a janela após a inserção
-                fecha();
             } catch (Exception e) {
                 // Exibir alerta de erro se a inserção falhar
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -125,6 +124,9 @@ public class CadastroPacoteController implements Initializable {
                 System.out.println("Mensagem do erro: " + e.getMessage());  // Mensagem da exceção
             }
 
+        });
+        voltarButton.setOnMouseClicked((MouseEvent event) -> {
+            Main.switchScreen("opcoes");
         });
     }
 

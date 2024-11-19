@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="new: case cadastroPacote" />
+    <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="new: case cadastroPacote">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroPacoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroPacoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/OpcoesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/OpcoesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/RelatorioReservaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/RelatorioReservaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/ReservaPacoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/ReservaPacoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/cadastroCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/cadastroCliente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/cadastroPacote.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/cadastroPacote.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/opcoes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/opcoes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/relatorioReserva.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/relatorioReserva.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/reservaPacote.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/reservaPacote.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroPacoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroPacoteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/OpcoesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/OpcoesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/RelatorioReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/RelatorioReservaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/ReservaPacoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/ReservaPacoteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/view/cadastroPacote.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/view/cadastroPacote.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,7 +245,7 @@
       <workItem from="1731978818241" duration="1365000" />
       <workItem from="1731983481621" duration="1397000" />
       <workItem from="1731985070097" duration="131000" />
-      <workItem from="1732023773853" duration="9941000" />
+      <workItem from="1732023773853" duration="15321000" />
     </task>
     <task id="LOCAL-00001" summary="fix: bug modules">
       <option name="closed" value="true" />
@@ -275,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732033985003</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new: case cadastroPacote">
+      <option name="closed" value="true" />
+      <created>1732034075829</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732034075829</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

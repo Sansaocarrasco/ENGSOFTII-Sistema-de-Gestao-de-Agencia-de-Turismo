@@ -1,5 +1,6 @@
 package br.edu.univasf.controller;
 
+import br.edu.univasf.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -17,13 +18,17 @@ public class RelatorioReservaController implements Initializable {
     public Button carregarDadosButton;
     @FXML
     public Button gerarRelatorioButton;
+    @FXML
+    public Button voltarButton;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         gerarRelatorioButton.setOnMouseClicked((MouseEvent event) -> {
-            // Fazer a função de gerar relatorio da reserva do cliente
-            fecha();
+        });
+
+        voltarButton.setOnMouseClicked((MouseEvent event) -> {
+            Main.switchScreen("opcoes");
         });
     }
     private void fecha() {

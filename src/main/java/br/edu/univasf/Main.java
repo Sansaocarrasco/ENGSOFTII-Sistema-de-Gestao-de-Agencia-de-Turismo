@@ -23,7 +23,7 @@ public class Main extends Application {
         try {
             // Carregar o arquivo FXML baseado no nome
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("view/" + fxmlFile + ".fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
             stage.setTitle("Travel Manager");
             stage.setScene(scene); // Troca a cena para a nova tela
             stage.show();
