@@ -2,68 +2,77 @@ package br.edu.univasf.model;
 import java.util.Date;
 
 public class Pacote {
-    private Integer id;
-    private Integer duracao;
-    private Double preco;
+    private int id;
     private String nome;
-    private String descricao;
     private String destino;
-    private Boolean disponibilidade;
+    private Date datainicio;
+    private Date datafim;
+    private String preco;
+    private String itinerario;
+    private int num_vagas;
+    private boolean transporte;
+    private String hospedagem;
+    private String atividades;
+    private String descricao;
 
     Pacote(){
-
     }
 
-    public Pacote(Integer duracao, Double preco, String nome, String descricao, String destino, Boolean disponibilidade) {
-        this.duracao = duracao;
-        this.preco = preco;
+    public Pacote(String nome, String destino, Date datainicio, Date datafim, String preco,
+                  String itinerario, int num_vagas, boolean transporte, String hospedagem,
+                  String atividades, String descricao) {
         this.nome = nome;
-        this.descricao = descricao;
         this.destino = destino;
-        this.disponibilidade = disponibilidade;
-    }
-
-    Pacote(Integer id, String nome, String descricao, Double preco, String destino, Integer duracao, Boolean disponibilidade)
-    {
-        this.id = id;
-        this.nome = nome;
-        this.descricao = descricao;
+        this.datainicio = datainicio;
+        this.datafim = datafim;
         this.preco = preco;
-        this.destino = destino;
-        this.duracao = duracao;
-        this.disponibilidade = disponibilidade;
+        this.itinerario = itinerario;
+        this.num_vagas = num_vagas;
+        this.transporte = transporte;
+        this.hospedagem = hospedagem;
+        this.atividades = atividades;
+        this.descricao = descricao;
     }
 
-    public Integer getId() {
+
+    public int getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getDuracao() {
-        return duracao;
-    }
-
-    public void setDuracao(Integer duracao) {
-        this.duracao = duracao;
-    }
-
-    public Double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getDestino() {
+        return destino;
+    }
+
+    public java.sql.Date getDatainicio() {
+        return new java.sql.Date(datainicio.getTime());
+    }
+
+    public java.sql.Date getDatafim() {
+        return new java.sql.Date(datafim.getTime());
+    }
+
+    public String getPreco() {
+        return preco;
+    }
+
+    public String getItinerario() {
+        return itinerario;
+    }
+
+    public int getNum_vagas() {
+        return num_vagas;
+    }
+
+    public String getHospedagem() {
+        return hospedagem;
+    }
+
+    public String getAtividades() {
+        return atividades;
     }
 
     public String getDescricao() {
@@ -74,19 +83,47 @@ public class Pacote {
         this.descricao = descricao;
     }
 
-    public String getDestino() {
-        return destino;
+    public void setAtividades(String atividades) {
+        this.atividades = atividades;
+    }
+
+    public void setHospedagem(String hospedagem) {
+        this.hospedagem = hospedagem;
+    }
+
+    public void setNum_vagas(int num_vagas) {
+        this.num_vagas = num_vagas;
+    }
+
+    public void setItinerario(String itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    public void setPreco(String preco) {
+        this.preco = preco;
+    }
+
+    public void setDatafim(Date datafim) {
+        this.datafim = datafim;
+    }
+
+    public void setDatainicio(Date datainicio) {
+        this.datainicio = datainicio;
     }
 
     public void setDestino(String destino) {
         this.destino = destino;
     }
 
-    public Boolean getDisponibilidade() {
-        return disponibilidade;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setDisponibilidade(Boolean disponibilidade) {
-        this.disponibilidade = disponibilidade;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isTransporte() {
+        return true;
     }
 }
