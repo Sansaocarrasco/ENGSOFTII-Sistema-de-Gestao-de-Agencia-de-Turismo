@@ -21,7 +21,6 @@ public class RelatorioReservaController implements Initializable {
     @FXML
     public Button voltarButton;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         gerarRelatorioButton.setOnMouseClicked((MouseEvent event) -> {

@@ -5,30 +5,35 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.univasf.controller.OpcoesController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.univasf.controller.OpcoesController">
+   <style>-fx-background-image: url('file:Images/opcoes.png'); -fx-background-size: cover;</style>
    <children>
-      <Button fx:id="cadastroClienteButton" layoutX="80.0" layoutY="95.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Cadastro de Cliente">
+      <Button fx:id="cadastroClienteButton" layoutX="114.0" layoutY="143.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Cadastro de Cliente">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Label layoutX="225.0" layoutY="34.0" text="Menu de Opções">
+      <Label layoutX="256.0" layoutY="39.0" style="-fx-font-weight: bold;" text="Menu de Opções" textFill="WHITE">
          <font>
-            <Font size="20.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="reservaPacoteButton" layoutX="80.0" layoutY="226.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Reserva de Pacote">
+      <Button fx:id="reservaPacoteButton" layoutX="114.0" layoutY="280.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Reserva de Pacote">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="cadastroPacoteButton" layoutX="328.0" layoutY="95.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Cadastro de Pacote">
+      <Button fx:id="cadastroPacoteButton" layoutX="423.0" layoutY="143.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Cadastro de Pacote">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="relatorioReservaButton" layoutX="328.0" layoutY="226.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Relatório de Reserva">
+      <Button fx:id="relatorioReservaButton" layoutX="423.0" layoutY="280.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="170.0" text="Relatório de Reserva">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="sairButton" layoutX="324.0" layoutY="398.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="53.0" text="Sair">
          <font>
             <Font size="15.0" />
          </font>

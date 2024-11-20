@@ -4,30 +4,46 @@ import br.edu.univasf.model.Reserva;
 import br.edu.univasf.utils.ConnectionFactory;
 import java.sql.*;
 
-public class reservaDAO{
+public class reservaDAO {
 
-    public void insert_reserva(Reserva reserva)
-    {
-        Connection conn = new ConnectionFactory().getConnection();
-        PreparedStatement preparedstatement;
-        try{
-            String finalQuery = "insert into reserva (pkfkClienteID, pkfkPacoteID, datareserva, parcelas, formaPagamento) " + "values(?,?,?,?,?)";
+    // Método que insere uma nova reserva no banco de dados
+    public void insert_reserva(Reserva reserva) throws SQLException {
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            // Estabelecer a conexão com o banco
+            conn = new ConnectionFactory().getConnection();
+            String query = "INSERT INTO reserva (nomePacote, pkfkPacoteID, nomeCliente, pkfkClienteID, datareserva) " +
+                    "VALUES(?,?,?,?,?)";
 
-            preparedstatement = conn.prepareStatement(finalQuery);
-            preparedstatement.setInt(1, reserva.getPkfkClienteId());
-            preparedstatement.setInt(2, reserva.getPkfkPacoteID());
-            //preparedstatement.setDate(3, Date.valueOf(reserva.getDatareserva()));
-            preparedstatement.setDate(3, reserva.getDatareserva());
-            preparedstatement.setInt(4, reserva.getParcelas());
-            preparedstatement.setString(5, reserva.getFormaPagamento());
+            preparedStatement = conn.prepareStatement(query);
 
-            int rowsInserted = preparedstatement.executeUpdate();
+            // Atribui os parâmetros corretamente
+            preparedStatement.setString(1, reserva.getNomePacote()); // Nome do pacote
+            preparedStatement.setInt(2, reserva.getPkfkPacoteID()); // ID do pacote
+            preparedStatement.setString(3, reserva.getNomeCliente()); // Nome do cliente
+            preparedStatement.setInt(4, reserva.getPkfkClienteId()); // ID do cliente
+            preparedStatement.setDate(5, java.sql.Date.valueOf(reserva.getDatareserva())); // Converte LocalDate para java.sql.Date
+
+            // Executa a inserção
+            int rowsInserted = preparedStatement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Inserção de reserva bem-sucedida!");
+            } else {
+                System.out.println("Falha ao inserir reserva.");
             }
 
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (SQLException e) {
+            System.out.println("Erro ao inserir a reserva: " + e.getMessage());
+            throw e;
+        } finally {
+            // Fecha a conexão e os recursos
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
         }
     }
 }

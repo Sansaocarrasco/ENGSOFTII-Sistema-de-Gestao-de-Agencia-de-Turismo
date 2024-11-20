@@ -20,7 +20,7 @@
             </padding>
 
             <!-- Botão Voltar na parte superior esquerda -->
-            <Button fx:id="voltarButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="66.0" style="-fx-background-color: #1f8fe8; -fx-background-radius: 10;" text="Voltar" textFill="WHITE" GridPane.rowIndex="0" GridPane.columnIndex="0">
+            <Button fx:id="voltarButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="66.0" style="-fx-background-color: #1f8fe8; -fx-background-radius: 10;" text="Voltar" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="0">
                 <font>
                     <Font size="15.0" />
                 </font>
@@ -31,38 +31,26 @@
             <Label style="-fx-text-fill: white;" text="Nome do Pacote" GridPane.rowIndex="2" />
             <TextField fx:id="nomePacoteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-            <Label style="-fx-text-fill: white;" text="Destino" GridPane.rowIndex="3" />
-            <TextField fx:id="destinoPacoteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-
-            <Label style="-fx-text-fill: white;" text="Data de Início" GridPane.rowIndex="4" />
-            <DatePicker fx:id="dataInicioPacotePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-
-            <Label style="-fx-text-fill: white;" text="Data de Fim" GridPane.rowIndex="5" />
-            <DatePicker fx:id="dataFimPacotePicker" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-
-            <Label style="-fx-text-fill: white;" text="Preço" GridPane.rowIndex="6" />
-            <TextField fx:id="precoPacoteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label style="-fx-text-fill: white;" text="ID do pacote" GridPane.rowIndex="3" />
+            <TextField fx:id="idPacoteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
             <!-- Informações do Cliente -->
-            <Label style="-fx-text-fill: white; -fx-font-size: 16px;" text="Informações do Cliente :" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+            <Label style="-fx-text-fill: white; -fx-font-size: 16px;" text="Informações do Cliente :" GridPane.columnSpan="2" GridPane.rowIndex="4" />
 
-            <Label style="-fx-text-fill: white;" text="Nome Completo" GridPane.rowIndex="8" />
-            <TextField fx:id="nomeClienteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label style="-fx-text-fill: white;" text="Nome Completo" GridPane.rowIndex="5" />
+            <TextField fx:id="nomeClienteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-            <Label style="-fx-text-fill: white;" text="E-mail" GridPane.rowIndex="9" />
-            <TextField fx:id="emailClienteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-
-            <Label style="-fx-text-fill: white;" text="Telefone" GridPane.rowIndex="10" />
-            <TextField fx:id="telefoneClienteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label style="-fx-text-fill: white;" text="CPF" GridPane.rowIndex="6" />
+            <TextField fx:id="cpfClienteTextField" prefWidth="200" style="-fx-background-color: white; -fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
             <!-- Detalhes da Reserva -->
-            <Label style="-fx-text-fill: white; -fx-font-size: 16px;" text="Detalhes da Reserva:" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Label style="-fx-text-fill: white; -fx-font-size: 16px;" text="Detalhes da Reserva:" GridPane.columnSpan="2" GridPane.rowIndex="7" />
 
-            <Label style="-fx-text-fill: white;" text="Data da Reserva" GridPane.rowIndex="12" />
-            <DatePicker fx:id="dataReservaPicker" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label style="-fx-text-fill: white;" text="Data da Reserva" GridPane.rowIndex="8" />
+            <DatePicker fx:id="dataReservaPicker" GridPane.columnIndex="1" GridPane.rowIndex="8" />
 
             <!-- Ações -->
-            <Button fx:id="reservaPacoteButton" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 10;" text="Confirmar Reserva" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+            <Button fx:id="reservaPacoteButton" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 10;" text="Confirmar Reserva" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="9" />
             <columnConstraints>
                 <ColumnConstraints />
                 <ColumnConstraints />
@@ -78,10 +66,7 @@
                 <RowConstraints />
                 <RowConstraints />
                 <RowConstraints />
-                <RowConstraints />
-                <RowConstraints />
-                <RowConstraints />
-                <RowConstraints />
+            <RowConstraints />
             </rowConstraints>
         </GridPane>
     </content>

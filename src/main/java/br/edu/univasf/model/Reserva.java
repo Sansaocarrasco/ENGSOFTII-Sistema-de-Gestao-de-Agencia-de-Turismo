@@ -1,81 +1,74 @@
 package br.edu.univasf.model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Reserva {
     private Integer reservaID;
-    private Integer pkfkClienteId;
+    private String nomePacote;
     private Integer pkfkPacoteID;
-    private Date datareserva;
-    private Integer parcelas;
-    private String formaPagamento;
+    private String nomeCliente;
+    private Integer pkfkClienteId;
+    private LocalDate datareserva;  // Usando LocalDate para melhor manipulação
 
-    public Reserva(Integer pkfkClienteId, Integer pkfkPacoteID, Date datareserva, Integer parcelas, String formaPagamento) {
-        this.pkfkClienteId = pkfkClienteId;
+    public Reserva(String nomePacote, Integer pkfkPacoteID, String nomeCliente, Integer pkfkClienteId, LocalDate datareserva) {
+        this.nomePacote = nomePacote;
         this.pkfkPacoteID = pkfkPacoteID;
-        this.datareserva = datareserva;
-        this.parcelas = parcelas;
-        this.formaPagamento = formaPagamento;
-    }
-
-    public Reserva(Integer reservaID, Integer pkfkClienteId, Integer pkfkPacoteID, Date datareserva, Integer parcelas, String formaPagamento) {
-        this.reservaID = reservaID;
+        this.nomeCliente = nomeCliente;
         this.pkfkClienteId = pkfkClienteId;
-        this.pkfkPacoteID = pkfkPacoteID;
         this.datareserva = datareserva;
-        this.parcelas = parcelas;
-        this.formaPagamento = formaPagamento;
     }
 
     public Integer getReservaID() {
         return reservaID;
     }
 
-    public void setReservaID(Integer reservaID) {
-        this.reservaID = reservaID;
-    }
-
-    public Integer getPkfkClienteId() {
-        return pkfkClienteId;
-    }
-
-    public void setPkfkClienteId(Integer pkfkClienteId) {
-        this.pkfkClienteId = pkfkClienteId;
+    public String getNomePacote() {
+        return nomePacote;
     }
 
     public Integer getPkfkPacoteID() {
         return pkfkPacoteID;
     }
 
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public Integer getPkfkClienteId() {
+        return pkfkClienteId;
+    }
+
+    public LocalDate getDatareserva() {
+        return datareserva;  // Retorna LocalDate diretamente
+    }
+
+    public java.sql.Date getSqlDataReserva() {
+        // Converte LocalDate para java.sql.Date quando necessário para persistência no banco de dados
+        return java.sql.Date.valueOf(datareserva);
+    }
+
+    public void setReservaID(Integer reservaID) {
+        this.reservaID = reservaID;
+    }
+
+    public void setNomePacote(String nomePacote) {
+        this.nomePacote = nomePacote;
+    }
+
     public void setPkfkPacoteID(Integer pkfkPacoteID) {
         this.pkfkPacoteID = pkfkPacoteID;
     }
 
-    public Date getDatareserva() {
-        return datareserva;
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
     }
 
-    public void setDatareserva(Date datareserva) {
+    public void setPkfkClienteId(Integer pkfkClienteId) {
+        this.pkfkClienteId = pkfkClienteId;
+    }
+
+    public void setDatareserva(LocalDate datareserva) {
         this.datareserva = datareserva;
     }
-
-    public Integer getParcelas() {
-        return parcelas;
-    }
-
-    public void setParcelas(Integer parcelas) {
-        this.parcelas = parcelas;
-    }
-
-    public String getFormaPagamento() {
-        return formaPagamento;
-    }
-
-    public void setFormaPagamento(String formaPagamento) {
-        this.formaPagamento = formaPagamento;
-    }
 }
-
-
-
-

@@ -74,6 +74,8 @@ public class CadastroClienteController implements Initializable {
                 alert.setContentText("O Cliente foi cadastrado com sucesso na base de dados!");
                 alert.show();
 
+                // Fechar a janela após a inserção
+                fecha();
             } catch (Exception e) {
                 // Exibir alerta de erro se a inserção falhar
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -83,8 +85,8 @@ public class CadastroClienteController implements Initializable {
                 alert.show();
             }
         });
-
         voltarButton.setOnMouseClicked((MouseEvent event) -> {
+            // Retorna para a tela de opções ao clicar no botão "Voltar"
             Main.switchScreen("opcoes");
         });
     }
