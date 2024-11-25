@@ -17,7 +17,7 @@ public class pacoteDAO {
             conn = new ConnectionFactory().getConnection();
 
             // Query SQL para inserção (não passamos o 'id', pois é auto-incrementado)
-            String finalQuery = "INSERT INTO pacote (nome, destino, datainicio, datafim, preco, num_vagas, hospedagem, itinerario, descricao, transporte) " +
+            String finalQuery = "INSERT INTO pacote (nome, destino, datainicio, datafim, preco, num_vagas,transporte , hospedagem, itinerario, descricao) " +
                     "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             preparedStatement = conn.prepareStatement(finalQuery, Statement.RETURN_GENERATED_KEYS);
@@ -28,10 +28,10 @@ public class pacoteDAO {
             preparedStatement.setDate(4, new java.sql.Date(pacote.getDatafim().getTime()));
             preparedStatement.setString(5, pacote.getPreco());
             preparedStatement.setInt(6, pacote.getNum_vagas());
-            preparedStatement.setString(7, pacote.getHospedagem());
-            preparedStatement.setString(8, pacote.getItinerario());
-            preparedStatement.setString(9, pacote.getDescricao());
-            preparedStatement.setBoolean(10, pacote.isTransporte());
+            preparedStatement.setBoolean(7, pacote.isTransporte());
+            preparedStatement.setString(8, pacote.getHospedagem());
+            preparedStatement.setString(9, pacote.getItinerario());
+            preparedStatement.setString(10, pacote.getDescricao());
 
             int rowsInserted = preparedStatement.executeUpdate();
 
@@ -84,10 +84,10 @@ public class pacoteDAO {
                 pacote.setDatafim(resultSet.getDate("datafim"));
                 pacote.setPreco(resultSet.getString("preco"));
                 pacote.setNum_vagas(resultSet.getInt("num_vagas"));
+                pacote.setTransporte(resultSet.getBoolean("transporte"));
                 pacote.setHospedagem(resultSet.getString("hospedagem"));
                 pacote.setItinerario(resultSet.getString("itinerario"));
                 pacote.setDescricao(resultSet.getString("descricao"));
-                pacote.setTransporte(resultSet.getBoolean("transporte"));
             }
 
         } catch (SQLException e) {

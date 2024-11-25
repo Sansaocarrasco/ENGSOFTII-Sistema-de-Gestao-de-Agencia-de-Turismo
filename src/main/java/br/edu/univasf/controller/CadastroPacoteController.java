@@ -33,7 +33,7 @@ public class CadastroPacoteController implements Initializable {
     @FXML
     private TextArea atividadesTextArea;
     @FXML
-    private TextField descricaoTextField;
+    private TextArea descricaoTextArea;
     @FXML
     private CheckBox transporteCheckBox;
     @FXML
@@ -42,21 +42,44 @@ public class CadastroPacoteController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cadastrarPacoteButton.setOnMouseClicked((MouseEvent event) -> {
+
             try {
                 // Capturar os dados dos campos do formulário
                 String nome = nomePacoteTextField.getText();
                 String destino = destinoTextField.getText();
-                Date datainicio = java.sql.Date.valueOf(dataInicioPicker.getValue());
-                Date datafim = java.sql.Date.valueOf(dataFimPicker.getValue());
                 String preco = precoTextField.getText();
-                int num_vagas = Integer.parseInt(vagasTextField.getText());
-                boolean transporte = transporteCheckBox.isSelected();
+                String vagas = vagasTextField.getText();
                 String hospedagem = hospedagemTextField.getText();
                 String itinerario = atividadesTextArea.getText();
-                String descricao = descricaoTextField.getText();
+                String descricao = descricaoTextArea.getText();
+                boolean transporte = transporteCheckBox.isSelected();
 
-                // Criar um objeto Pacote com os dados coletados
+                // Validar campos obrigatórios
+                if (nome.isEmpty() || destino.isEmpty() ||
+                        dataInicioPicker.getValue() == null ||
+                        dataFimPicker.getValue() == null ||
+                        itinerario.isEmpty() || descricao.isEmpty() ||
+                        preco.isEmpty() || vagas.isEmpty()) {
+
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Atenção");
+                    alert.setHeaderText("Campos obrigatórios não preenchidos");
+                    alert.setContentText("Por favor, preencha todos os campos obrigatórios antes de cadastrar.");
+                    alert.show();
+                    return;
+                }
+
+                // Obter as datas como objetos SQL Date
+                Date datainicio = Date.valueOf(dataInicioPicker.getValue());
+                Date datafim = Date.valueOf(dataFimPicker.getValue());
+
+                // Converter vagas para inteiro
+                int num_vagas = Integer.parseInt(vagas);
+
+                // Criar e inicializar o objeto Pacote
                 Pacote pacote = new Pacote(
+                        nome, destino, datainicio, datafim, preco,
+                        itinerario, num_vagas, transporte, hospedagem, descricao
                 );
 
                 // Criar o DAO e tentar inserir o pacote no banco de dados
@@ -70,9 +93,6 @@ public class CadastroPacoteController implements Initializable {
                 alert.setContentText("O Pacote foi cadastrado com sucesso na base de dados!");
                 alert.show();
 
-                // Exibir o ID gerado, caso você queira
-                System.out.println("Pacote cadastrado com ID: " + pacote.getId());
-
             } catch (Exception e) {
                 // Exibir alerta de erro se a inserção falhar
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -82,8 +102,8 @@ public class CadastroPacoteController implements Initializable {
                 alert.show();
 
                 // Imprimir detalhes da exceção para depuração
-                e.printStackTrace();  // Isso vai imprimir a stack trace no console, ajudando a identificar o erro
-                System.out.println("Mensagem do erro: " + e.getMessage());  // Mensagem da exceção
+                e.printStackTrace();
+                System.out.println("Mensagem do erro: " + e.getMessage());
             }
         });
 

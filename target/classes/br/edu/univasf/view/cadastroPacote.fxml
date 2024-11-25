@@ -62,7 +62,7 @@
         <TextArea fx:id="atividadesTextArea" prefHeight="36.0" prefRowCount="3" prefWidth="478.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
 
         <Label style="-fx-text-fill: white;" text="Descrição do Pacote:" GridPane.rowIndex="9" />
-        <TextArea fx:id="descricaoTextField" prefHeight="57.0" prefRowCount="3" prefWidth="478.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+        <TextArea fx:id="descricaoTextArea" prefHeight="57.0" prefRowCount="3" prefWidth="478.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
 
         <!-- Botão de Cadastrar -->
         <HBox alignment="CENTER" prefHeight="58.0" prefWidth="478.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
