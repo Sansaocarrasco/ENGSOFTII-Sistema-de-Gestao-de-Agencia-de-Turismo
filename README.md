@@ -1,5 +1,5 @@
 # TravelManager: Sistema de Gestão para Agências de Turismo
-
+![TravelManager](https://github.com/user-attachments/assets/b109dd9f-43b9-49ff-9133-cce5297eb1d4)
 ## Descrição do Projeto
 
 **TravelManager** é um sistema de gestão projetado para otimizar e simplificar o funcionamento de uma agência de turismo. Este projeto visa permitir que os funcionários da agência possam gerenciar pacotes turísticos, cadastrar clientes, registrar reservas, controlar pagamentos, gerar itinerários e produzir relatórios detalhados. A principal missão do aplicativo é fornecer uma plataforma integrada e intuitiva para o gerenciamento eficiente de todas as operações da agência.
@@ -41,10 +41,11 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
 Crie as tabelas necessárias no seu banco de dados PostgreSQL (recomenda-se o uso do pgAdmin ou qualquer outra ferramenta de sua escolha).
 Execute os seguintes comandos SQL para criar as tabelas cliente, pacote e reserva:
 
+```sql
 CREATE TABLE cliente (
-    id SERIAL PRIMARY KEY, -- Chave primária auto-incrementada
-    cpf VARCHAR(11) UNIQUE NOT NULL, -- CPF deve ser único e não nulo
-    nome VARCHAR(100) NOT NULL,
+id SERIAL PRIMARY KEY, -- Chave primária auto-incrementada
+cpf VARCHAR(11) UNIQUE NOT NULL, -- CPF deve ser único e não nulo
+nome VARCHAR(100) NOT NULL,
     email VARCHAR(100),
     rua VARCHAR(255),
     bairro VARCHAR(100),
@@ -54,7 +55,9 @@ CREATE TABLE cliente (
     telefone VARCHAR(15),
     ddd VARCHAR(3)
 );
+```
 
+```sql
 CREATE TABLE pacote (
     id SERIAL PRIMARY KEY, -- Chave primária auto-incrementada
     nome VARCHAR(255) NOT NULL,
@@ -68,7 +71,9 @@ CREATE TABLE pacote (
     descricao TEXT,
     transporte BOOLEAN
 );
+```
 
+```sql
 CREATE TABLE reserva (
     reservaID SERIAL PRIMARY KEY,
     nomePacote VARCHAR(100) NOT NULL,
@@ -80,6 +85,7 @@ CREATE TABLE reserva (
     CONSTRAINT fk_cliente FOREIGN KEY (cpfCliente) REFERENCES cliente(cpf) ON DELETE CASCADE,
     CONSTRAINT chk_reserva CHECK (pkfkPacoteID IS NOT NULL OR cpfCliente IS NOT NULL)
 );
+```
 
 ## Instruções para Execução
 ### Configuração do banco de dados:
