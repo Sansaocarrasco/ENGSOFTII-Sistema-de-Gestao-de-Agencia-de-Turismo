@@ -16,22 +16,27 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
 - **Gestão de Pagamentos**: Registre e controle os pagamentos das reservas, com a possibilidade de confirmar ou recusar transações.
 - **Geração de Itinerários**: Crie itinerários personalizados para cada cliente, com informações completas sobre voos, passeios, acomodações, entre outros.
 - **Geração de Relatórios**: Gere relatórios detalhados sobre clientes, reservas, pacotes e pagamentos, ajudando a tomar decisões baseadas em dados.
-  
+
 ---
+
 ## Tecnologias Utilizadas
 
-Java 23.0.1: Utilizado como linguagem de programação para o desenvolvimento do sistema.
-JavaFX 17.0.6: Framework utilizado para criação da interface gráfica do usuário (GUI).
-PostgreSQL 42.7.4: Banco de dados relacional utilizado para armazenar as informações dos clientes, pacotes e reservas.
-IntelliJ IDEA: Ambiente de desenvolvimento integrado (IDE) utilizado para o desenvolvimento do código.
+- **Java 23.0.1**: Utilizado como linguagem de programação para o desenvolvimento do sistema.
+- **JavaFX 17.0.6**: Framework utilizado para criação da interface gráfica do usuário (GUI).
+- **PostgreSQL 42.7.4**: Banco de dados relacional utilizado para armazenar as informações dos clientes, pacotes e reservas.
+- **IntelliJ IDEA**: Ambiente de desenvolvimento integrado (IDE) utilizado para o desenvolvimento do código.
+
+---
 
 ## Como Usar
 
 ### Pré-requisitos
 
 1. **Clone o repositório** para seu ambiente local:
+
    ```bash
    git clone https://github.com/sansaocarrasco/TravelManager.git
+
 2. **Configure o banco de dados PostgreSQL**
 Crie as tabelas necessárias no seu banco de dados PostgreSQL (recomenda-se o uso do pgAdmin ou qualquer outra ferramenta de sua escolha).
 Execute os seguintes comandos SQL para criar as tabelas cliente, pacote e reserva:
