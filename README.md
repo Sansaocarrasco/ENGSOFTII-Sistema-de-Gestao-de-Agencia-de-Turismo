@@ -39,7 +39,7 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
 1. **Clone o repositório** para seu ambiente local:
 
    ```bash
-   git clone https://github.com/sansaocarrasco/TravelManager.git
+   https://github.com/Sansaocarrasco/ENGSOFTII-Sistema-de-Gestao-de-Agencia-de-Turismo.git
 
 2. **Configure o banco de dados PostgreSQL**
 Crie as tabelas necessárias no seu banco de dados PostgreSQL (recomenda-se o uso do pgAdmin ou qualquer outra ferramenta de sua escolha).
