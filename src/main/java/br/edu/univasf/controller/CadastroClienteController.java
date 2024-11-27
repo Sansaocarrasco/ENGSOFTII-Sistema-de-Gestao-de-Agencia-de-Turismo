@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import static br.edu.univasf.Main.stage;
@@ -17,6 +18,9 @@ public class CadastroClienteController implements Initializable {
 
     @FXML
     public Button voltarButton;
+
+    @FXML
+    public TextField ruaTextField;
 
     @FXML
     private Button cadastrarClienteButton;
@@ -37,7 +41,16 @@ public class CadastroClienteController implements Initializable {
     private TextField telefoneTextField;
 
     @FXML
-    private TextArea enderecoTextArea;
+    private TextField bairroTextField;
+
+    @FXML
+    private TextField cidadeTextField;
+
+    @FXML
+    private TextField estadoTextField;
+
+    @FXML
+    private TextField numeroTextField;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -47,21 +60,37 @@ public class CadastroClienteController implements Initializable {
             String cpf = cpfTextField.getText();
             String email = emailTextField.getText();
             String telefone = telefoneTextField.getText();
-            String endereco = enderecoTextArea.getText();
-            String dataNascimento = dataNascimentoPicker.getValue() != null ? dataNascimentoPicker.getValue().toString() : null;
+            String rua = ruaTextField.getText();
+            String bairro = bairroTextField.getText();
+            String cidade = cidadeTextField.getText();
+            String estado = estadoTextField.getText();
+            String numero = numeroTextField.getText();
+            LocalDate dataNascimento = dataNascimentoPicker.getValue();
 
-            // Validação dos campos obrigatórios
-            if (nome.isEmpty() || cpf.isEmpty() || email.isEmpty() || endereco.isEmpty() || dataNascimento == null) {
+            // Verificação se algum campo obrigatório está vazio
+            if (nome.isEmpty() || cpf.isEmpty() || email.isEmpty() || telefone.isEmpty() || rua.isEmpty() ||
+                    bairro.isEmpty() || cidade.isEmpty() || estado.isEmpty() || numero.isEmpty() || dataNascimento == null) {
+
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Atenção");
                 alert.setHeaderText("Campos obrigatórios não preenchidos");
                 alert.setContentText("Por favor, preencha todos os campos obrigatórios antes de cadastrar.");
                 alert.show();
-                return;
+                return; // Interrompe o fluxo caso algum campo esteja vazio
+            }
+
+            // Verificar se o CPF já está cadastrado
+            if (verificarCpfExistente(cpf)) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Atenção");
+                alert.setHeaderText("CPF já cadastrado");
+                alert.setContentText("O CPF fornecido já está cadastrado no sistema.");
+                alert.show();
+                return; // Interrompe o fluxo caso o CPF já exista
             }
 
             // Criar um objeto Cliente com os dados coletados
-            Cliente cliente = new Cliente(cpf, nome, email, endereco, dataNascimento, "", "", "", telefone, "");
+            Cliente cliente = new Cliente(cpf, nome, email, telefone, rua, bairro, cidade, numero, estado, dataNascimento);
 
             // Criar o DAO e tentar inserir o cliente no banco de dados
             clienteDAO dao = new clienteDAO();
@@ -92,6 +121,13 @@ public class CadastroClienteController implements Initializable {
             // Retorna para a tela de opções ao clicar no botão "Voltar"
             Main.switchScreen("opcoes");
         });
+    }
+
+    // Método para verificar se o CPF já está cadastrado no banco de dados
+    private boolean verificarCpfExistente(String cpf) {
+        clienteDAO dao = new clienteDAO();
+        Cliente cliente = dao.buscarClientePorCpf(cpf); // Buscar cliente no banco de dados pelo CPF
+        return cliente != null; // Retorna verdadeiro se o cliente já existir
     }
 
     private void fecha() {

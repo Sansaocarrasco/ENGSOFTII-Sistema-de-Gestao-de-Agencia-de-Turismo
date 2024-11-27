@@ -1,6 +1,5 @@
 package br.edu.univasf.model;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class Reserva {
@@ -8,14 +7,14 @@ public class Reserva {
     private String nomePacote;
     private Integer pkfkPacoteID;
     private String nomeCliente;
-    private Integer pkfkClienteId;
+    private String cpfCliente;  // Alterado para CPF
     private LocalDate datareserva;  // Usando LocalDate para melhor manipulação
 
-    public Reserva(String nomePacote, Integer pkfkPacoteID, String nomeCliente, Integer pkfkClienteId, LocalDate datareserva) {
+    public Reserva(String nomePacote, Integer pkfkPacoteID, String nomeCliente, String cpfCliente, LocalDate datareserva) {
         this.nomePacote = nomePacote;
         this.pkfkPacoteID = pkfkPacoteID;
         this.nomeCliente = nomeCliente;
-        this.pkfkClienteId = pkfkClienteId;
+        this.cpfCliente = cpfCliente;
         this.datareserva = datareserva;
     }
 
@@ -35,8 +34,8 @@ public class Reserva {
         return nomeCliente;
     }
 
-    public Integer getPkfkClienteId() {
-        return pkfkClienteId;
+    public String getCpfCliente() {
+        return cpfCliente;  // Retorna o CPF
     }
 
     public LocalDate getDatareserva() {
@@ -64,8 +63,8 @@ public class Reserva {
         this.nomeCliente = nomeCliente;
     }
 
-    public void setPkfkClienteId(Integer pkfkClienteId) {
-        this.pkfkClienteId = pkfkClienteId;
+    public void setCpfCliente(String cpfCliente) {
+        this.cpfCliente = cpfCliente;  // Altera o CPF
     }
 
     public void setDatareserva(LocalDate datareserva) {

@@ -7,6 +7,12 @@ import java.sql.*;
 
 public class pacoteDAO {
 
+    // Método para verificar se já existe um pacote com o mesmo nome no banco
+    public boolean verificarPacoteExistente(String nome) {
+        Pacote pacote = buscarPacotePorNome(nome);
+        return pacote != null;  // Se encontrar um pacote, retorna true (já existe)
+    }
+
     // Método para inserir um pacote no banco de dados
     public void cadastrarPacote(Pacote pacote) {
         Connection conn = null;
@@ -14,10 +20,15 @@ public class pacoteDAO {
         ResultSet resultSet = null;
 
         try {
+            // Verificar se já existe um pacote com o mesmo nome
+            if (verificarPacoteExistente(pacote.getNome())) {
+                throw new SQLException("Já existe um pacote com o nome " + pacote.getNome());
+            }
+
             conn = new ConnectionFactory().getConnection();
 
             // Query SQL para inserção (não passamos o 'id', pois é auto-incrementado)
-            String finalQuery = "INSERT INTO pacote (nome, destino, datainicio, datafim, preco, num_vagas,transporte , hospedagem, itinerario, descricao) " +
+            String finalQuery = "INSERT INTO pacote (nome, destino, datainicio, datafim, preco, num_vagas, transporte , hospedagem, itinerario, descricao) " +
                     "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             preparedStatement = conn.prepareStatement(finalQuery, Statement.RETURN_GENERATED_KEYS);
@@ -92,6 +103,52 @@ public class pacoteDAO {
 
         } catch (SQLException e) {
             System.out.println("Erro ao buscar pacote por nome: " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (preparedStatement != null) preparedStatement.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                System.out.println("Erro ao fechar recursos: " + e.getMessage());
+            }
+        }
+        return pacote;  // Retorna o pacote encontrado ou null se não encontrar
+    }
+
+    public Pacote buscarPacotePorId(Integer idPacote) {
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Pacote pacote = null;
+
+        try {
+            conn = new ConnectionFactory().getConnection();
+
+            // Query SQL para buscar pacote pelo id
+            String query = "SELECT * FROM pacote WHERE id = ?";
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setInt(1, idPacote);
+
+            resultSet = preparedStatement.executeQuery();
+
+            // Se encontrar o pacote
+            if (resultSet.next()) {
+                pacote = new Pacote();
+                pacote.setId(resultSet.getInt("id"));
+                pacote.setNome(resultSet.getString("nome"));
+                pacote.setDestino(resultSet.getString("destino"));
+                pacote.setDatainicio(resultSet.getDate("datainicio"));
+                pacote.setDatafim(resultSet.getDate("datafim"));
+                pacote.setPreco(resultSet.getString("preco"));
+                pacote.setNum_vagas(resultSet.getInt("num_vagas"));
+                pacote.setTransporte(resultSet.getBoolean("transporte"));
+                pacote.setHospedagem(resultSet.getString("hospedagem"));
+                pacote.setItinerario(resultSet.getString("itinerario"));
+                pacote.setDescricao(resultSet.getString("descricao"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar pacote por id: " + e.getMessage());
         } finally {
             try {
                 if (resultSet != null) resultSet.close();

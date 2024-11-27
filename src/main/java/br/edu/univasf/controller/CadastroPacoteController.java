@@ -69,6 +69,19 @@ public class CadastroPacoteController implements Initializable {
                     return;
                 }
 
+                // Verificar se já existe um pacote com o mesmo nome no banco de dados
+                pacoteDAO dao = new pacoteDAO();
+                boolean pacoteExistente = dao.verificarPacoteExistente(nome); // Verifica se o nome do pacote já está cadastrado no banco
+
+                if (pacoteExistente) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Atenção");
+                    alert.setHeaderText("Pacote já cadastrado");
+                    alert.setContentText("Já existe um pacote com o nome informado. Escolha outro nome.");
+                    alert.show();
+                    return;
+                }
+
                 // Obter as datas como objetos SQL Date
                 Date datainicio = Date.valueOf(dataInicioPicker.getValue());
                 Date datafim = Date.valueOf(dataFimPicker.getValue());
@@ -82,9 +95,8 @@ public class CadastroPacoteController implements Initializable {
                         itinerario, num_vagas, transporte, hospedagem, descricao
                 );
 
-                // Criar o DAO e tentar inserir o pacote no banco de dados
-                pacoteDAO dao = new pacoteDAO();
-                dao.cadastrarPacote(pacote);  // Inserir pacote no banco de dados
+                // Inserir pacote no banco de dados
+                dao.cadastrarPacote(pacote);
 
                 // Exibir alerta de sucesso
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);

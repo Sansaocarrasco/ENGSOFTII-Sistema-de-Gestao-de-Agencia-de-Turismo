@@ -13,7 +13,7 @@ public class reservaDAO {
         try {
             // Estabelecer a conexão com o banco
             conn = new ConnectionFactory().getConnection();
-            String query = "INSERT INTO reserva (nomePacote, pkfkPacoteID, nomeCliente, pkfkClienteID, datareserva) " +
+            String query = "INSERT INTO reserva (nomePacote, pkfkPacoteID, nomeCliente, cpfCliente, datareserva) " +
                     "VALUES(?,?,?,?,?)";
 
             preparedStatement = conn.prepareStatement(query);
@@ -22,7 +22,7 @@ public class reservaDAO {
             preparedStatement.setString(1, reserva.getNomePacote()); // Nome do pacote
             preparedStatement.setInt(2, reserva.getPkfkPacoteID()); // ID do pacote
             preparedStatement.setString(3, reserva.getNomeCliente()); // Nome do cliente
-            preparedStatement.setInt(4, reserva.getPkfkClienteId()); // ID do cliente
+            preparedStatement.setString(4, reserva.getCpfCliente()); // CPF do cliente
             preparedStatement.setDate(5, java.sql.Date.valueOf(reserva.getDatareserva())); // Converte LocalDate para java.sql.Date
 
             // Executa a inserção
@@ -46,4 +46,42 @@ public class reservaDAO {
             }
         }
     }
+
+    public boolean verificarReservaExistente(String cpfCliente, Integer pkfkPacoteID) throws SQLException {
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            conn = new ConnectionFactory().getConnection();
+            String query = "SELECT COUNT(*) FROM reserva WHERE cpfCliente = ? AND pkfkPacoteID = ?";
+
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, cpfCliente);
+            preparedStatement.setInt(2, pkfkPacoteID);
+
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return resultSet.getInt(1) > 0;  // Retorna true se já houver uma reserva
+            }
+
+            return false;
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao verificar reserva existente: " + e.getMessage());
+            throw e;
+        } finally {
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+    }
+
 }

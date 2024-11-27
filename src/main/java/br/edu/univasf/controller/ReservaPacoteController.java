@@ -1,6 +1,7 @@
 package br.edu.univasf.controller;
 
 import br.edu.univasf.Main;
+import br.edu.univasf.dao.clienteDAO;
 import br.edu.univasf.dao.pacoteDAO;
 import br.edu.univasf.dao.reservaDAO;
 import br.edu.univasf.model.Cliente;
@@ -57,43 +58,64 @@ public class ReservaPacoteController implements Initializable {
                 return;
             }
 
-            // Buscar o cliente
-            Cliente cliente = buscarClientePorNome(nomeCliente);
+            // Captura o CPF do cliente
+            String cpfCliente = cpfClienteTextField.getText();
+
+            // Buscar o cliente pelo CPF
+            Cliente cliente = buscarClientePorCpf(cpfCliente);
 
             // Verifica se o cliente foi encontrado
             if (cliente == null) {
-                mostrarAlerta("Erro", "Cliente não encontrado", "Não foi possível encontrar o cliente com o nome fornecido.");
+                mostrarAlerta("Erro", "Cliente não encontrado", "Não foi possível encontrar o cliente com o CPF fornecido.");
                 return;
             }
 
-            // Buscar o pacote
+            // Buscar o pacote pelo nome ou ID
             pacoteDAO pacoteDAO = new pacoteDAO();
-            Pacote pacote = pacoteDAO.buscarPacotePorNome(nomePacote);
+            Pacote pacote = null;
 
-            // Verifica se o pacote foi encontrado e se o ID do pacote não é nulo
+            if (!nomePacote.isEmpty()) {
+                pacote = pacoteDAO.buscarPacotePorNome(nomePacote);  // Busca por nome
+            } else if (!idPacoteTextField.getText().isEmpty()) {
+                try {
+                    Integer idPacote = Integer.parseInt(idPacoteTextField.getText());
+                    pacote = pacoteDAO.buscarPacotePorId(idPacote);  // Busca por ID
+                } catch (NumberFormatException e) {
+                    mostrarAlerta("Erro", "ID do Pacote Inválido", "O ID fornecido não é válido.");
+                    return;
+                }
+            }
+
+            // Verifica se o pacote foi encontrado
             if (pacote == null || pacote.getId() == null) {
-                mostrarAlerta("Erro", "Pacote não encontrado", "Não foi possível encontrar o pacote com o nome fornecido ou o pacote está sem um ID válido.");
+                mostrarAlerta("Erro", "Pacote não encontrado", "Não foi possível encontrar o pacote com o nome ou ID fornecido.");
                 return;
             }
 
-            // Exibe os IDs em um alerta (opcional)
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("IDs dos Itens");
-            alert.setHeaderText("Informações da Reserva");
-            alert.setContentText("ID do Cliente: " + cliente.getId() + "\nID do Pacote: " + pacote.getId());
-            alert.show();
+            // Verifica se já existe uma reserva do cliente para o mesmo pacote
+            reservaDAO reservaDAO = new reservaDAO();
+            boolean reservaExistente = false;
+            try {
+                reservaExistente = reservaDAO.verificarReservaExistente(cliente.getCpf(), pacote.getId());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+            if (reservaExistente) {
+                mostrarAlerta("Erro", "Reserva já existente", "Você já tem uma reserva para este pacote.");
+                return;
+            }
 
             // Cria um objeto Reserva com os dados fornecidos
             Reserva reserva = new Reserva(
                     nomePacote,                          // Nome do pacote
-                    pacote.getId(),                      // ID do pacote (agora validado)
-                    nomeCliente,                         // Nome do cliente
-                    cliente.getId(),                     // ID do cliente
+                    pacote.getId(),                      // ID do pacote
+                    cliente.getNome(),                   // Nome do cliente
+                    cliente.getCpf(),                    // Usando o CPF do cliente
                     dataReservaPicker.getValue()         // Data da reserva
             );
 
             // Insere a reserva no banco de dados
-            reservaDAO reservaDAO = new reservaDAO();
             try {
                 reservaDAO.insert_reserva(reserva); // Tenta salvar a reserva no banco
 
@@ -141,14 +163,11 @@ public class ReservaPacoteController implements Initializable {
         dataReservaPicker.setValue(null);
     }
 
-    // Método para buscar o cliente por nome (simulação de um método de busca)
-    private Cliente buscarClientePorNome(String nomeCliente) {
-        // Aqui, você pode substituir pela lógica real de busca de cliente
-        // Exemplo simulado, onde o nome do cliente é usado para a busca.
-        Cliente cliente = new Cliente();
-        cliente.setId(1); // Atribuindo um ID fictício ao cliente encontrado
-        cliente.setNome(nomeCliente);
-        return cliente;  // Retorna o cliente encontrado
+    // Método para buscar o cliente por CPF
+    private Cliente buscarClientePorCpf(String cpf) {
+        clienteDAO dao = new clienteDAO();
+        Cliente cliente = dao.buscarClientePorCpf(cpf); // Buscando cliente no banco de dados
+        return cliente;  // Retorna o cliente encontrado ou null se não existir
     }
 
     // Método para fechar a tela (caso necessário)
