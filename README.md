@@ -1,5 +1,9 @@
-# TravelManager: Sistema de Gestão para Agências de Turismo
-![TravelManager](https://github.com/user-attachments/assets/b109dd9f-43b9-49ff-9133-cce5297eb1d4)
+
+<h1>TravelManager: Sistema de Gestão para Agências de Turismo</h1>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b109dd9f-43b9-49ff-9133-cce5297eb1d4" alt="TravelManager"/>
+</p>
+
 ## Descrição do Projeto
 
 **TravelManager** é um sistema de gestão projetado para otimizar e simplificar o funcionamento de uma agência de turismo. Este projeto visa permitir que os funcionários da agência possam gerenciar pacotes turísticos, cadastrar clientes, registrar reservas, controlar pagamentos, gerar itinerários e produzir relatórios detalhados. A principal missão do aplicativo é fornecer uma plataforma integrada e intuitiva para o gerenciamento eficiente de todas as operações da agência.
