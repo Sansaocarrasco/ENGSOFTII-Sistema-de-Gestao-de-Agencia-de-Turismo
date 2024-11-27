@@ -112,4 +112,5 @@ Gere itinerários personalizados para os clientes.
 Crie e visualize relatórios detalhados.
 
 ## Licença
-Este projeto é licenciado sob a Licença MIT. Você pode usá-lo, modificá-lo e distribuí-lo conforme os termos dessa licença.
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
