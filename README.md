@@ -44,14 +44,13 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
 
 2. **Configuração do banco de dados PostgreSQL**
 O programa faz a criação de todo o banco de dados automaticamente, é necessário apenas configurar a classe ConnectionFactory, localizada em utils.
+substitua os campos abaixo de acordo com as credenciais de seu banco de dados, recomendamos utilizar o PgAdmin 4.
 
-'''sql
+```java
 private static final String URL = "jdbc:postgresql://localhost:5432/bdteste";
 private static final String USER = "joaopedro";
 private static final String PASSWORD = "123";
-'''
-
-substitua esses campos de acordo com suas credenciais de seu banco de dados, recomendamos utilizar o mesmo banco de dados, o PgAdmin 4.
+```
 
 3. **Configuração das dependências necessarias**
 
@@ -87,13 +86,17 @@ clique em "Apply" e depois em "Ok", feche a tela e execute o programa
 
 Com o projeto aberto, encontre a classe "Main" do projeto e a execute.
 O aplicativo irá iniciar e você será redirecionado a tela de Login do Travel Manager.
-![image](https://github.com/user-attachments/assets/8ce43569-f2f8-4f87-8786-f155349d9396)
+
+![image](https://github.com/user-attachments/assets/0ad562f4-db57-40ac-880d-1ed015861420)
 
 Forneça as seguintes credenciais:
+
+```java
 Usuário: admin
 Senha: 1234
+```
 
-Clique em entrar.
+Clique em "Entrar".
 
 Após isso você poderá fazer as operações de adicionar cliente, adicionar pacotes, reservar um pacote, gerar relatórios das reservas e muitas outras funcionalidades.
 
