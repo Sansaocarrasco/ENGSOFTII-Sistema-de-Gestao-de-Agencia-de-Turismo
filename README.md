@@ -45,9 +45,11 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
 2. **Configuração do banco de dados PostgreSQL**
 O programa faz a criação de todo o banco de dados automaticamente, é necessário apenas configurar a classe ConnectionFactory, localizada em utils.
 
+'''sql
 private static final String URL = "jdbc:postgresql://localhost:5432/bdteste";
 private static final String USER = "joaopedro";
 private static final String PASSWORD = "123";
+'''
 
 substitua esses campos de acordo com suas credenciais de seu banco de dados, recomendamos utilizar o mesmo banco de dados, o PgAdmin 4.
 
@@ -74,8 +76,10 @@ Para o referente projeto utilizamos o sdk com a versão 23.0.1
 
 Ao abrir o Intellij clique em "File" e depois vá em "Project Structure" depois "Modules"
 ![image](https://github.com/user-attachments/assets/8ba629a0-ec3c-42dd-bf14-ea83bcd19707)
+
 Aperte no "+" e adicione as dependencias do Banco de Dados e do JavaFX
 ![image](https://github.com/user-attachments/assets/dee51ea2-6866-48c3-89f3-924301e68647)
+
 clique em "Apply" e depois em "Ok", feche a tela e execute o programa
 
 ## Instruções para Execução
