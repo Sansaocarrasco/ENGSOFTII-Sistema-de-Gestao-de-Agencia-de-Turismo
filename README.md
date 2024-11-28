@@ -43,8 +43,9 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
    https://github.com/Sansaocarrasco/ENGSOFTII-Sistema-de-Gestao-de-Agencia-de-Turismo.git
 
 2. **Configuração do banco de dados PostgreSQL**
-O programa faz a criação de todo o banco de dados automaticamente, é necessário apenas configurar a classe ConnectionFactory, localizada em utils.
-substitua os campos abaixo de acordo com as credenciais de seu banco de dados, recomendamos utilizar o PgAdmin 4.
+O programa faz a criação de todo o banco de dados automaticamente, é necessário apenas configurar a classe **ConnectionFactory**, localizada em "utils".
+
+Substitua os campos abaixo de acordo com as credenciais de seu banco de dados, recomendamos utilizar o PgAdmin 4:
 
 ```java
 private static final String URL = "jdbc:postgresql://localhost:5432/bdteste";
