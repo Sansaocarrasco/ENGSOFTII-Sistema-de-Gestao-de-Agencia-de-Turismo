@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="update: views transition">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/fundo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroPacoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroPacoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/pacoteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/pacoteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroClienteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroPacoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroPacoteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/ReservaPacoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/ReservaPacoteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Pacote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Pacote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Reserva.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/model/Reserva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/view/cadastroCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/view/cadastroCliente.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/view/cadastroPacote.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/view/cadastroPacote.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,34 +68,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CadastroCliente.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Control.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Control2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Login.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Opcoes.executor&quot;: &quot;Run&quot;,
-    &quot;Application.br.edu.univasf.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.com.example.demo.Login.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;23&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;B:/Downloads/postgresql-42.7.4.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CadastroCliente.executor": "Run",
+    "Application.Control.executor": "Run",
+    "Application.Control2.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Login.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Opcoes.executor": "Run",
+    "Application.br.edu.univasf.Main.executor": "Run",
+    "Application.com.example.demo.Login.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "23",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "B:/Downloads/openjfx-23.0.1_windows-x64_bin-sdk (1).zip",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\joaop\IdeaProjects\loginscreen" />
@@ -240,6 +240,7 @@
       <workItem from="1732060086995" duration="2804000" />
       <workItem from="1732120337574" duration="8543000" />
       <workItem from="1732554281892" duration="5900000" />
+      <workItem from="1732764396200" duration="144000" />
     </task>
     <task id="LOCAL-00001" summary="fix: bug modules">
       <option name="closed" value="true" />
