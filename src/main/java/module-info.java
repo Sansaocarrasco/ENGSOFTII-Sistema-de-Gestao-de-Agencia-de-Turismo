@@ -9,4 +9,8 @@ module com.example.demo {
 
     opens br.edu.univasf.controller to javafx.fxml;
     exports br.edu.univasf.controller;
+
+    opens br.edu.univasf.model to javafx.base;
+    exports br.edu.univasf.model;
+
 }

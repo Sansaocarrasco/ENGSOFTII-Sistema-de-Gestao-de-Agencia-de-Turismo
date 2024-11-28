@@ -12,18 +12,29 @@
     <!-- Título da Tela -->
     <Label layoutX="230.0" layoutY="20.0" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;" text="Gerar Relatório" />
 
-    <!-- Tabela de Informações -->
-    <Label layoutX="20.0" layoutY="60.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;" text="Informações dos Clientes e Pacotes" />
+<!--     Tabela de Informações-->
+<!--    <Label layoutX="20.0" layoutY="60.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;" text="Informações dos Clientes e Pacotes" />-->
+<!--    <TableView fx:id="tableRelatorio" layoutX="20.0" layoutY="90.0" prefHeight="290.0" prefWidth="660.0">-->
+<!--        <columns>-->
+<!--            <TableColumn prefWidth="143.0" text="Nome do Cliente" />-->
+<!--            <TableColumn prefWidth="115.0" text="CPF" />-->
+<!--            <TableColumn prefWidth="179.0" text="Email" />-->
+<!--            <TableColumn minWidth="0.0" prefWidth="125.0" text="Telefone" />-->
+<!--            <TableColumn prefWidth="188.0" text="Nome do Pacote" />-->
+<!--            <TableColumn prefWidth="150.0" text="Destino" />-->
+<!--            <TableColumn prefWidth="100.0" text="Preço" />-->
+<!--            <TableColumn prefWidth="100.0" text="Vagas Ocupadas" />-->
+<!--        </columns>-->
+<!--    </TableView>-->
+
     <TableView fx:id="tableRelatorio" layoutX="20.0" layoutY="90.0" prefHeight="290.0" prefWidth="660.0">
         <columns>
-            <TableColumn prefWidth="143.0" text="Nome do Cliente" />
-            <TableColumn prefWidth="115.0" text="CPF" />
-            <TableColumn prefWidth="179.0" text="Email" />
-            <TableColumn minWidth="0.0" prefWidth="125.0" text="Telefone" />
-            <TableColumn prefWidth="188.0" text="Nome do Pacote" />
-            <TableColumn prefWidth="150.0" text="Destino" />
-            <TableColumn prefWidth="100.0" text="Preço" />
-            <TableColumn prefWidth="100.0" text="Vagas Ocupadas" />
+            <TableColumn fx:id="colNomeCliente" text="Nome do Cliente" prefWidth="143.0" />
+            <TableColumn fx:id="colCpf" text="CPF" prefWidth="115.0" />
+            <TableColumn fx:id="colPacote" text="Pacote" prefWidth="179.0" />
+            <TableColumn fx:id="colPreco" text="Preço" prefWidth="125.0" />
+            <TableColumn fx:id="colDataReserva" text="Data" prefWidth="188.0" />
+            <TableColumn fx:id="colPagamento" text="Pagamento" prefWidth="150.0" />
         </columns>
     </TableView>
 

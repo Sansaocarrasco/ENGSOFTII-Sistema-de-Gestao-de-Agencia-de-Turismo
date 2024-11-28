@@ -124,15 +124,16 @@ public class CadastroClienteController implements Initializable {
 
                 // Exibir alerta de sucesso e limpar campos
                 Validators.mostrarAlerta("Notificação", null,"O Cliente foi cadastrado com sucesso na base de dados!", true);
-                nomeTextField.clear();
-                cpfTextField.clear();
-                emailTextField.clear();
-                telefoneTextField.clear();
-                ruaTextField.clear();
-                bairroTextField.clear();
-                cidadeTextField.clear();
-                numeroTextField.clear();
-                estadoTextField.clear();
+//                nomeTextField.clear();
+//                cpfTextField.clear();
+//                emailTextField.clear();
+//                telefoneTextField.clear();
+//                ruaTextField.clear();
+//                bairroTextField.clear();
+//                cidadeTextField.clear();
+//                numeroTextField.clear();
+//                estadoTextField.clear();
+//                dataNascimentoPicker.getEditor().clear();
 
                 // Fechar a janela após a inserção
                 //fecha();

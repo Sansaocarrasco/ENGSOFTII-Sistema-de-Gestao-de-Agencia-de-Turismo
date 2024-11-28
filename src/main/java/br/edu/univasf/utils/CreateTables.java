@@ -12,9 +12,9 @@ public class CreateTables {
             "bairro VARCHAR(100) NOT NULL, " +
             "cidade VARCHAR(100) NOT NULL, " +
             "numero VARCHAR(20) NOT NULL, " +
-            "estado VARCHAR(2) NOT NULL, " +
+            "estado VARCHAR(100) NOT NULL, " +
             "telefone VARCHAR(15) NOT NULL, " +
-            "nascimento DATE NOT NULL)";  // Alterado para DATE
+            "nascimento VARCHAR(10) NOT NULL)";  // Alterado para DATE
 
     private static final String atributosPacote = "(pacoteID SERIAL PRIMARY KEY, " +
             "nome VARCHAR(100) NOT NULL UNIQUE, " +

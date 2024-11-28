@@ -89,13 +89,13 @@ public class CadastroPacoteController implements Initializable {
 
                 // Exibir alerta de sucesso e limpar campos
                 Validators.mostrarAlerta("Notificação", null, "O Pacote foi cadastrado com sucesso na base de dados!", true);
-                descricaoTextArea.clear();
-                destinoTextField.clear();
-                duracaoTextField.clear();
-                hospedagemTextField.clear();
-                precoTextField.clear();
-                itinerarioTextArea.clear();
-                nomePacoteTextField.clear();
+//                descricaoTextArea.clear();
+//                destinoTextField.clear();
+//                duracaoTextField.clear();
+//                hospedagemTextField.clear();
+//                precoTextField.clear();
+//                itinerarioTextArea.clear();
+//                nomePacoteTextField.clear();
 
             } catch (Exception e) {
                 // Exibir alerta de erro se a inserção falhar

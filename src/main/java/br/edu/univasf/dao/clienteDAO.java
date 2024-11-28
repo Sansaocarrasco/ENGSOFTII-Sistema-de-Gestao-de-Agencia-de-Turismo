@@ -11,7 +11,7 @@ public class clienteDAO {
         Connection conn = new ConnectionFactory().getConnection();
         PreparedStatement preparedStatement;
         try {
-            String finalQuery = "INSERT INTO cliente (cpf, nome, email, rua, bairro, cidade, numero, estado, telefone, data_nascimento) " +
+            String finalQuery = "INSERT INTO cliente (cpf, nome, email, rua, bairro, cidade, numero, estado, telefone, nascimento) " +
                     "VALUES(?,?,?,?,?,?,?,?,?,?)";
 
             preparedStatement = conn.prepareStatement(finalQuery);
@@ -64,7 +64,7 @@ public class clienteDAO {
                 cliente.setNumero(resultSet.getString("numero"));
                 cliente.setEstado(resultSet.getString("estado"));
                 cliente.setTelefone(resultSet.getString("telefone"));
-                cliente.setNascimento(resultSet.getString("data_nascimento"));
+                cliente.setNascimento(resultSet.getString("nascimento"));
             }
 
         } catch (SQLException e) {
