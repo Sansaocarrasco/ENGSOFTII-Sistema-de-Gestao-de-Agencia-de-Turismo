@@ -14,6 +14,7 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
 
 ## Funcionalidades
 
+- **Fazer Login**: Um funcionário devidamente cadastrado no Travel Manager poderá desfrutar de todas as funcionalidades do sistema.
 - **Gestão de Pacotes Turísticos**: Crie, edite e visualize pacotes turísticos detalhados com informações como destino, datas, itinerários e preços.
 - **Cadastro de Clientes**: Armazene informações detalhadas dos clientes, como nome, CPF, endereço, telefone e histórico de reservas.
 - **Reserva de Pacotes**: Realize a reserva de pacotes turísticos, associando clientes aos pacotes desejados com facilidade.
@@ -92,14 +93,6 @@ Clique em entrar.
 
 Após isso você poderá fazer as operações de adicionar cliente, adicionar pacotes, reservar um pacote, gerar relatórios das reservas e muitas outras funcionalidades.
 
-### Funcionalidades:
-
-Realize login como funcionário.
-Cadastre clientes e pacotes turísticos.
-Registre reservas de pacotes.
-Acompanhe e gerencie os pagamentos.
-Gere itinerários personalizados para os clientes.
-Crie e visualize relatórios detalhados.
 
 ## Licença
 
