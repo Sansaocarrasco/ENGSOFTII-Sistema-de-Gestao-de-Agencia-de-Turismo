@@ -62,6 +62,9 @@ public class ReservaPacoteController implements Initializable {
             // Captura o CPF do cliente
             String cpfCliente = cpfClienteTextField.getText();
 
+            // Remover a formatação do CPF (pontos e travessão)
+            cpfCliente = cpfCliente.replaceAll("[^0-9]", "");
+
             // Buscar o cliente pelo CPF
             Cliente cliente = buscarClientePorCpf(cpfCliente);
 
@@ -120,14 +123,14 @@ public class ReservaPacoteController implements Initializable {
             try {
                 reservaDAO.insert_reserva(reserva); // Tenta salvar a reserva no banco
 
-// Exibe um alerta de sucesso
+                // Exibe um alerta de sucesso
                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                 successAlert.setTitle("Notificação");
                 successAlert.setHeaderText(null);
                 successAlert.setContentText("O Pacote foi reservado com sucesso!");
                 successAlert.showAndWait();
 
-// Exibe um diálogo de confirmação
+                // Exibe um diálogo de confirmação
                 Alert nextStepAlert = new Alert(Alert.AlertType.CONFIRMATION);
                 nextStepAlert.setTitle("Próximo Passo");
                 nextStepAlert.setHeaderText("Deseja fazer outra reserva ou ir para a tela de pagamento?");
@@ -173,9 +176,7 @@ public class ReservaPacoteController implements Initializable {
 
     // Método para limpar os campos após a reserva
     private void limparCampos() {
-        nomeClienteTextField.clear();
         idPacoteTextField.clear();
-        cpfClienteTextField.clear();
         nomePacoteTextField.clear();
         dataReservaPicker.setValue(null);
     }

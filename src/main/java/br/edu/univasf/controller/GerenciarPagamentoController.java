@@ -137,16 +137,19 @@ public class GerenciarPagamentoController implements Initializable {
 
                     switch (metodoPagamento) {
                         case "Cartão de Crédito":
+                            Session.setCliente(cliente);
                             loader = new FXMLLoader(getClass().getResource("/br/edu/univasf/view/pagamentoCartao.fxml"));
                             root = loader.load();
                             CartaoCreditoController cartaoCreditoController = loader.getController();
                             cartaoCreditoController.setValorTotal(valorTotal);  // Passa o valor total para o controlador
                             break;
                         case "Boleto":
+                            Session.setCliente(cliente);
                             loader = new FXMLLoader(getClass().getResource("/br/edu/univasf/view/pagamentoBoleto.fxml"));
                             root = loader.load();
                             break;
                         case "Transferência Bancária":
+                            Session.setCliente(cliente);
                             loader = new FXMLLoader(getClass().getResource("/br/edu/univasf/view/pagamentoTransferencia.fxml"));
                             root = loader.load();
                             break;

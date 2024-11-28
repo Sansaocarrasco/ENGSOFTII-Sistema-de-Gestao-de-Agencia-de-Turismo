@@ -14,6 +14,7 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
 
 ## Funcionalidades
 
+- **Fazer Login**: Um funcionário devidamente cadastrado no Travel Manager poderá desfrutar de todas as funcionalidades do sistema.
 - **Gestão de Pacotes Turísticos**: Crie, edite e visualize pacotes turísticos detalhados com informações como destino, datas, itinerários e preços.
 - **Cadastro de Clientes**: Armazene informações detalhadas dos clientes, como nome, CPF, endereço, telefone e histórico de reservas.
 - **Reserva de Pacotes**: Realize a reserva de pacotes turísticos, associando clientes aos pacotes desejados com facilidade.
@@ -25,10 +26,10 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
 
 ## Tecnologias Utilizadas
 
-- **Java 23.0.1**: Utilizado como linguagem de programação para o desenvolvimento do sistema.
-- **JavaFX 17.0.6**: Framework utilizado para criação da interface gráfica do usuário (GUI).
-- **PostgreSQL 42.7.4**: Banco de dados relacional utilizado para armazenar as informações dos clientes, pacotes e reservas.
-- **IntelliJ IDEA**: Ambiente de desenvolvimento integrado (IDE) utilizado para o desenvolvimento do código.
+- **Java --versão JDK 23.0.1**: Utilizado como linguagem de programação para o desenvolvimento do sistema.
+- **JavaFX --versão SDK 23.0.1**: Framework utilizado para criação da interface gráfica do usuário (GUI).
+- **PostgreSQL --versão JDBC 42.7.4**: Banco de dados relacional utilizado para armazenar as informações dos clientes, pacotes e reservas.
+- **IntelliJ IDEA --versão 2024.2.4**: Ambiente de desenvolvimento integrado (IDE) utilizado para o desenvolvimento do código.
 
 ---
 
@@ -41,75 +42,68 @@ Este projeto foi desenvolvido como parte da disciplina de **Engenharia de Softwa
    ```bash
    https://github.com/Sansaocarrasco/ENGSOFTII-Sistema-de-Gestao-de-Agencia-de-Turismo.git
 
-2. **Configure o banco de dados PostgreSQL**
-Crie as tabelas necessárias no seu banco de dados PostgreSQL (recomenda-se o uso do pgAdmin ou qualquer outra ferramenta de sua escolha).
-Execute os seguintes comandos SQL para criar as tabelas cliente, pacote e reserva:
+2. **Configuração do banco de dados PostgreSQL**
+O programa faz a criação de todo o banco de dados automaticamente, é necessário apenas configurar a classe **ConnectionFactory**, localizada em "utils".
 
-```sql
-CREATE TABLE cliente (
-id SERIAL PRIMARY KEY, -- Chave primária auto-incrementada
-cpf VARCHAR(11) UNIQUE NOT NULL, -- CPF deve ser único e não nulo
-nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100),
-    rua VARCHAR(255),
-    bairro VARCHAR(100),
-    cidade VARCHAR(100),
-    numero VARCHAR(10),
-    estado VARCHAR(2),
-    telefone VARCHAR(15),
-    ddd VARCHAR(3)
-);
+Substitua os campos abaixo de acordo com as credenciais de seu banco de dados, recomendamos utilizar o PgAdmin 4:
+
+```java
+private static final String URL = "jdbc:postgresql://localhost:5432/bdteste";
+private static final String USER = "joaopedro";
+private static final String PASSWORD = "123";
 ```
 
-```sql
-CREATE TABLE pacote (
-    id SERIAL PRIMARY KEY, -- Chave primária auto-incrementada
-    nome VARCHAR(255) NOT NULL,
-    destino VARCHAR(255),
-    datainicio DATE NOT NULL,
-    datafim DATE NOT NULL,
-    preco VARCHAR(20),
-    num_vagas INT NOT NULL,
-    hospedagem VARCHAR(255),
-    itinerario TEXT,
-    descricao TEXT,
-    transporte BOOLEAN
-);
-```
+3. **Configuração das dependências necessarias**
 
-```sql
-CREATE TABLE reserva (
-    reservaID SERIAL PRIMARY KEY,
-    nomePacote VARCHAR(100) NOT NULL,
-    pkfkPacoteID INTEGER,  -- ID do pacote (pode ser nulo)
-    nomeCliente VARCHAR(100) NOT NULL,
-    cpfCliente VARCHAR(11) UNIQUE,  -- CPF do cliente (único)
-    datareserva DATE NOT NULL,
-    CONSTRAINT fk_pacote FOREIGN KEY (pkfkPacoteID) REFERENCES pacote(id) ON DELETE CASCADE,
-    CONSTRAINT fk_cliente FOREIGN KEY (cpfCliente) REFERENCES cliente(cpf) ON DELETE CASCADE,
-    CONSTRAINT chk_reserva CHECK (pkfkPacoteID IS NOT NULL OR cpfCliente IS NOT NULL)
-);
-```
+## Baixando as dependências
+
+### IDE (Intellij)
+Recomendamos utilizar a IDE Intellij para uma correta instalação de suas dependências, mas normalmente qualquer IDE deverá funcionar para o projeto.
+Ele pode ser encontrado no link: https://www.jetbrains.com/idea/download/?section=windows
+Para o referente projeto utilizamos o IntelliJ IDEA versão 2024.2.4
+
+### Banco de dados (PgAdmin 4)
+Caso esteja utilizando o mesmo banco de dados PgAdmin 4 é necessário ter o modulo jdbc postgresql mais atualizado.
+Ele pode ser encontrado no link: https://jdbc.postgresql.org/download/
+Para o referente projeto utilizamos o jdbc com a versão 42.7.4
+
+### Visualização de Telas (JafaFX)
+Para as telas, é necessario ter o modulo sdk mais atualizado do javafx.
+Ele pode ser encontrado no link: https://gluonhq.com/products/javafx/
+Para o referente projeto utilizamos o sdk com a versão 23.0.1
+
+## Adicionando as dependencias ao projeto
+
+Ao abrir o Intellij clique em "File" e depois vá em "Project Structure" depois "Modules"
+![image](https://github.com/user-attachments/assets/8ba629a0-ec3c-42dd-bf14-ea83bcd19707)
+
+Aperte no "+" e adicione as dependencias do Banco de Dados e do JavaFX
+![image](https://github.com/user-attachments/assets/dee51ea2-6866-48c3-89f3-924301e68647)
+
+clique em "Apply" e depois em "Ok", feche a tela e execute o programa
 
 ## Instruções para Execução
-### Configuração do banco de dados:
-
-Após a criação das tabelas, configure as credenciais de acesso ao banco de dados em seu arquivo de configuração, ou diretamente no código, conforme a estrutura que você utilizar.
-
 ### Rodar o aplicativo:
 
-Abra o projeto no IntelliJ IDEA.
-Compile e execute o projeto.
-O aplicativo irá iniciar e você poderá acessar a interface gráfica para gerenciar as operações de pacotes turísticos, clientes, reservas, pagamentos, itinerários e relatórios.
+Com o projeto aberto, encontre a classe "Main" do projeto e a execute.
+O aplicativo irá iniciar e você será redirecionado a tela de Login do Travel Manager.
 
-### Funcionalidades:
+![image](https://github.com/user-attachments/assets/0ad562f4-db57-40ac-880d-1ed015861420)
 
-Realize login como funcionário.
-Cadastre clientes e pacotes turísticos.
-Registre reservas de pacotes.
-Acompanhe e gerencie os pagamentos.
-Gere itinerários personalizados para os clientes.
-Crie e visualize relatórios detalhados.
+Forneça as seguintes credenciais:
+
+```java
+Usuário: admin
+Senha: 1234
+```
+
+Clique em "Entrar".
+
+Após isso você poderá fazer as operações de adicionar cliente, adicionar pacotes, reservar um pacote, gerar relatórios das reservas e muitas outras funcionalidades.
+
+![image](https://github.com/user-attachments/assets/41fb82df-7982-4597-9fba-0f1b0d1560d0)
+
+
 
 ## Licença
 
