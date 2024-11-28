@@ -3,9 +3,9 @@ import java.sql.*;
 
 public class ConnectionFactory {
 
-    private static final String URL = "jdbc:postgresql://localhost:5433/EngSoftware";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "admin";
+    private static final String URL = "jdbc:postgresql://localhost:5432/bdteste";
+    private static final String USER = "joaopedro";
+    private static final String PASSWORD = "123";
 
     public Connection getConnection (){
         Connection conn = null;

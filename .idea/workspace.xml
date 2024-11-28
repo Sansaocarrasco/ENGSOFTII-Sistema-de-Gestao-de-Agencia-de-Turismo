@@ -6,23 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroPacoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CadastroPacoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/RelatorioReservaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/RelatorioReservaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/clienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/clienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/BoletoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/BoletoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CartaoCreditoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CartaoCreditoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/GerenciarPagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/GerenciarPagamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/ReservaPacoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/ReservaPacoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/TransferenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/TransferenciaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/CreateTables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/CreateTables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/Validators.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/relatorioReserva.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/relatorioReserva.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroClienteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroPacoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/CadastroPacoteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/RelatorioReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/controller/RelatorioReservaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/dao/clienteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/dao/clienteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/utils/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/utils/ConnectionFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/utils/CreateTables.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/utils/CreateTables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/univasf/view/relatorioReserva.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/univasf/view/relatorioReserva.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +83,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "23",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/erica/Downloads/openjfx-23.0.1_windows-x64_bin-sdk.zip",
+    "last_opened_file_path": "B:/Downloads/openjfx-23.0.1_windows-x64_bin-sdk (1).zip",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -210,6 +200,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -250,6 +248,7 @@
       <workItem from="1732740869094" duration="23004000" />
       <workItem from="1732764252849" duration="98000" />
       <workItem from="1732764384981" duration="10000" />
+      <workItem from="1732802298956" duration="7087000" />
     </task>
     <task id="LOCAL-00001" summary="fix: bug modules">
       <option name="closed" value="true" />

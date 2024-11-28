@@ -173,9 +173,7 @@ public class ReservaPacoteController implements Initializable {
 
     // Método para limpar os campos após a reserva
     private void limparCampos() {
-        nomeClienteTextField.clear();
         idPacoteTextField.clear();
-        cpfClienteTextField.clear();
         nomePacoteTextField.clear();
         dataReservaPicker.setValue(null);
     }

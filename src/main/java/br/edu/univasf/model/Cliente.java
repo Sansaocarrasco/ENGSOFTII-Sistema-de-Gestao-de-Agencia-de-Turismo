@@ -13,7 +13,7 @@ public class Cliente {
     private String numero;
     private String estado;
     private String telefone;
-    private String data_nascimento;
+    private String nascimento;
 
 
     public Cliente() {
@@ -29,7 +29,7 @@ public class Cliente {
         this.numero = numero;
         this.estado = estado;
         this.telefone = telefone;
-        this.data_nascimento = nascimento;
+        this.nascimento = nascimento;
 
     }
 
@@ -127,7 +127,7 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public String getNascimento() {return data_nascimento;}
+    public String getNascimento() {return nascimento;}
 
-    public void setNascimento(String nascimento) {this.data_nascimento = nascimento;}
+    public void setNascimento(String nascimento) {this.nascimento = nascimento;}
 }
