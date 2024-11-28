@@ -3,6 +3,7 @@ package br.edu.univasf.controller;
 import br.edu.univasf.Main;
 import br.edu.univasf.dao.pacoteDAO;
 import br.edu.univasf.model.Pacote;
+import br.edu.univasf.utils.Validators;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -21,21 +22,17 @@ public class CadastroPacoteController implements Initializable {
     @FXML
     private TextField destinoTextField;
     @FXML
-    private DatePicker dataInicioPicker;
-    @FXML
-    private DatePicker dataFimPicker;
-    @FXML
     private TextField precoTextField;
-    @FXML
-    private TextField vagasTextField;
     @FXML
     private TextField hospedagemTextField;
     @FXML
-    private TextArea atividadesTextArea;
-    @FXML
     private TextArea descricaoTextArea;
     @FXML
+    private TextField duracaoTextField;
+    @FXML
     private CheckBox transporteCheckBox;
+    @FXML
+    private TextArea itinerarioTextArea;
     @FXML
     private Button voltarButton;
 
@@ -48,62 +45,57 @@ public class CadastroPacoteController implements Initializable {
                 String nome = nomePacoteTextField.getText();
                 String destino = destinoTextField.getText();
                 String preco = precoTextField.getText();
-                String vagas = vagasTextField.getText();
+                String duracao = duracaoTextField.getText();
                 String hospedagem = hospedagemTextField.getText();
-                String itinerario = atividadesTextArea.getText();
                 String descricao = descricaoTextArea.getText();
+                String itinerario = itinerarioTextArea.getText();
                 boolean transporte = transporteCheckBox.isSelected();
 
+
                 // Validar campos obrigatórios
-                if (nome.isEmpty() || destino.isEmpty() ||
-                        dataInicioPicker.getValue() == null ||
-                        dataFimPicker.getValue() == null ||
-                        itinerario.isEmpty() || descricao.isEmpty() ||
-                        preco.isEmpty() || vagas.isEmpty()) {
-
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Atenção");
-                    alert.setHeaderText("Campos obrigatórios não preenchidos");
-                    alert.setContentText("Por favor, preencha todos os campos obrigatórios antes de cadastrar.");
-                    alert.show();
+                if (nome.isEmpty() || destino.isEmpty() || descricao.isEmpty() || preco.isEmpty() || duracao.isEmpty() || itinerario.isEmpty()) {
+                    Validators.mostrarAlerta("Atenção", "Campos obrigatórios não preenchidos","Por favor, preencha todos os campos obrigatórios antes de cadastrar.", false);
                     return;
                 }
 
-                // Verificar se já existe um pacote com o mesmo nome no banco de dados
-                pacoteDAO dao = new pacoteDAO();
-                boolean pacoteExistente = dao.verificarPacoteExistente(nome); // Verifica se o nome do pacote já está cadastrado no banco
-
-                if (pacoteExistente) {
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Atenção");
-                    alert.setHeaderText("Pacote já cadastrado");
-                    alert.setContentText("Já existe um pacote com o nome informado. Escolha outro nome.");
-                    alert.show();
+                if(!Validators.isUnique("pacote", "nome", nome))
+                {
+                    Validators.mostrarAlerta("Atenção", "nome inválido", "já há um pacote cadastrado com este nome.", false);
                     return;
                 }
 
-                // Obter as datas como objetos SQL Date
-                Date datainicio = Date.valueOf(dataInicioPicker.getValue());
-                Date datafim = Date.valueOf(dataFimPicker.getValue());
+                if(!Validators.isValidPrice(preco))
+                {
+                    Validators.mostrarAlerta("Atenção", "preço inválido", "forneça um valor de preço válido", false);
+                    return;
+                }
 
-                // Converter vagas para inteiro
-                int num_vagas = Integer.parseInt(vagas);
+                if(!Validators.isValidDuration(duracao))
+                {
+                    Validators.mostrarAlerta("Atenção", "duração inválida", "forneça uma quantidade de dias válida",false);
+                    return;
+                }
+
+                // Converter duracao para inteiro
+                int dura = Integer.parseInt(duracao);
+                double prec = Double.parseDouble(preco);
 
                 // Criar e inicializar o objeto Pacote
-                Pacote pacote = new Pacote(
-                        nome, destino, datainicio, datafim, preco,
-                        itinerario, num_vagas, transporte, hospedagem, descricao
-                );
+                Pacote pacote = new Pacote(nome, destino, prec, descricao, dura, transporte, hospedagem, itinerario);
 
-                // Inserir pacote no banco de dados
-                dao.cadastrarPacote(pacote);
+                // Criar o DAO e tentar inserir o pacote no banco de dados
+                pacoteDAO dao = new pacoteDAO();
+                dao.cadastrarPacote(pacote);  // Inserir pacote no banco de dados
 
-                // Exibir alerta de sucesso
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Notificação");
-                alert.setHeaderText(null);
-                alert.setContentText("O Pacote foi cadastrado com sucesso na base de dados!");
-                alert.show();
+                // Exibir alerta de sucesso e limpar campos
+                Validators.mostrarAlerta("Notificação", null, "O Pacote foi cadastrado com sucesso na base de dados!", true);
+                descricaoTextArea.clear();
+                destinoTextField.clear();
+                duracaoTextField.clear();
+                hospedagemTextField.clear();
+                precoTextField.clear();
+                itinerarioTextArea.clear();
+                nomePacoteTextField.clear();
 
             } catch (Exception e) {
                 // Exibir alerta de erro se a inserção falhar

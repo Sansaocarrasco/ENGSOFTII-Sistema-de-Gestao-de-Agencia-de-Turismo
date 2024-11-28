@@ -7,7 +7,6 @@ import java.sql.*;
 
 public class pacoteDAO {
 
-    // Método para verificar se já existe um pacote com o mesmo nome no banco
     public boolean verificarPacoteExistente(String nome) {
         Pacote pacote = buscarPacotePorNome(nome);
         return pacote != null;  // Se encontrar um pacote, retorna true (já existe)
@@ -20,29 +19,23 @@ public class pacoteDAO {
         ResultSet resultSet = null;
 
         try {
-            // Verificar se já existe um pacote com o mesmo nome
-            if (verificarPacoteExistente(pacote.getNome())) {
-                throw new SQLException("Já existe um pacote com o nome " + pacote.getNome());
-            }
-
             conn = new ConnectionFactory().getConnection();
 
+
             // Query SQL para inserção (não passamos o 'id', pois é auto-incrementado)
-            String finalQuery = "INSERT INTO pacote (nome, destino, datainicio, datafim, preco, num_vagas, transporte , hospedagem, itinerario, descricao) " +
-                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String finalQuery = "INSERT INTO pacote (nome, descricao, preco, destino, hospedagem, duracao, transporte, itinerario) " +
+                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
             preparedStatement = conn.prepareStatement(finalQuery, Statement.RETURN_GENERATED_KEYS);
 
             preparedStatement.setString(1, pacote.getNome());
-            preparedStatement.setString(2, pacote.getDestino());
-            preparedStatement.setDate(3, new java.sql.Date(pacote.getDatainicio().getTime()));
-            preparedStatement.setDate(4, new java.sql.Date(pacote.getDatafim().getTime()));
-            preparedStatement.setString(5, pacote.getPreco());
-            preparedStatement.setInt(6, pacote.getNum_vagas());
+            preparedStatement.setString(2, pacote.getDescricao());
+            preparedStatement.setDouble(3, pacote.getPreco());
+            preparedStatement.setString(4, pacote.getDestino());
+            preparedStatement.setString(5, pacote.getHospedagem());
+            preparedStatement.setInt(6, pacote.getDuracao());
             preparedStatement.setBoolean(7, pacote.isTransporte());
-            preparedStatement.setString(8, pacote.getHospedagem());
-            preparedStatement.setString(9, pacote.getItinerario());
-            preparedStatement.setString(10, pacote.getDescricao());
+            preparedStatement.setString(8, pacote.getItinerario());
 
             int rowsInserted = preparedStatement.executeUpdate();
 
@@ -88,16 +81,13 @@ public class pacoteDAO {
             // Se encontrar o pacote
             if (resultSet.next()) {
                 pacote = new Pacote();
-                pacote.setId(resultSet.getInt("id"));
+                pacote.setId(resultSet.getInt("pacoteid"));
                 pacote.setNome(resultSet.getString("nome"));
                 pacote.setDestino(resultSet.getString("destino"));
-                pacote.setDatainicio(resultSet.getDate("datainicio"));
-                pacote.setDatafim(resultSet.getDate("datafim"));
-                pacote.setPreco(resultSet.getString("preco"));
-                pacote.setNum_vagas(resultSet.getInt("num_vagas"));
+                pacote.setPreco(resultSet.getDouble("preco"));
+                pacote.setDuracao(resultSet.getInt("duracao"));
                 pacote.setTransporte(resultSet.getBoolean("transporte"));
                 pacote.setHospedagem(resultSet.getString("hospedagem"));
-                pacote.setItinerario(resultSet.getString("itinerario"));
                 pacote.setDescricao(resultSet.getString("descricao"));
             }
 
@@ -112,6 +102,7 @@ public class pacoteDAO {
                 System.out.println("Erro ao fechar recursos: " + e.getMessage());
             }
         }
+
         return pacote;  // Retorna o pacote encontrado ou null se não encontrar
     }
 
@@ -134,13 +125,11 @@ public class pacoteDAO {
             // Se encontrar o pacote
             if (resultSet.next()) {
                 pacote = new Pacote();
-                pacote.setId(resultSet.getInt("id"));
+                pacote.setId(resultSet.getInt("pacoteid"));
                 pacote.setNome(resultSet.getString("nome"));
-                pacote.setDestino(resultSet.getString("destino"));
-                pacote.setDatainicio(resultSet.getDate("datainicio"));
-                pacote.setDatafim(resultSet.getDate("datafim"));
-                pacote.setPreco(resultSet.getString("preco"));
-                pacote.setNum_vagas(resultSet.getInt("num_vagas"));
+                pacote.setDestino(resultSet.getString("destino"));;
+                pacote.setPreco(resultSet.getDouble("preco"));
+                pacote.setDuracao(resultSet.getInt("duracao"));
                 pacote.setTransporte(resultSet.getBoolean("transporte"));
                 pacote.setHospedagem(resultSet.getString("hospedagem"));
                 pacote.setItinerario(resultSet.getString("itinerario"));

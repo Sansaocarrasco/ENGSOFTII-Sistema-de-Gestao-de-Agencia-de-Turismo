@@ -4,35 +4,32 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.univasf.controller.RelatorioReservaController">
 
     <!-- Título da Tela -->
-    <Label layoutX="264.0" layoutY="21.0" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;" text="Gerar Relatório" />
-
-    <!-- Campo de Pesquisa por CPF -->
-    <Label layoutX="86.0" layoutY="401.0" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;" text="Buscar Cliente (CPF):" />
-    <TextField fx:id="campoCpf" layoutX="238.0" layoutY="398.0" prefWidth="200.0" promptText="Digite o CPF" />
+    <Label layoutX="230.0" layoutY="20.0" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;" text="Gerar Relatório" />
 
     <!-- Tabela de Informações -->
-    <Label layoutX="20.0" layoutY="100.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;" text="Informações dos Clientes e Pacotes" />
-    <TableView fx:id="tableRelatorio" layoutX="20.0" layoutY="130.0" prefHeight="240.0" prefWidth="660.0">
+    <Label layoutX="20.0" layoutY="60.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;" text="Informações dos Clientes e Pacotes" />
+    <TableView fx:id="tableRelatorio" layoutX="20.0" layoutY="90.0" prefHeight="290.0" prefWidth="660.0">
         <columns>
-            <TableColumn fx:id="nomeClienteColumn" prefWidth="117.0" text="Nome do Cliente" />
-            <TableColumn fx:id="cpfClienteColumn" prefWidth="123.0" text="CPF" />
-            <TableColumn fx:id="emailClienteColumn" prefWidth="130.0" text="Email" />
-            <TableColumn fx:id="nomePacoteColumn" maxWidth="1.7976931348623157E308" minWidth="6.0" prefWidth="104.0" text="Nome do Pacote" />
-            <TableColumn fx:id="destinoColumn" minWidth="0.0" prefWidth="95.0" text="Destino" />
-            <TableColumn fx:id="precoColumn" maxWidth="500.0" prefWidth="90.0" text="Preço" />
+            <TableColumn prefWidth="143.0" text="Nome do Cliente" />
+            <TableColumn prefWidth="115.0" text="CPF" />
+            <TableColumn prefWidth="179.0" text="Email" />
+            <TableColumn minWidth="0.0" prefWidth="125.0" text="Telefone" />
+            <TableColumn prefWidth="188.0" text="Nome do Pacote" />
+            <TableColumn prefWidth="150.0" text="Destino" />
+            <TableColumn prefWidth="100.0" text="Preço" />
+            <TableColumn prefWidth="100.0" text="Vagas Ocupadas" />
         </columns>
     </TableView>
 
     <!-- Botões -->
-    <Button fx:id="carregarDadosButton" layoutX="454.0" layoutY="397.0" prefWidth="150.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Buscar Dados" />
-    <Button fx:id="gerarRelatorioButton" layoutX="263.0" layoutY="448.0" prefWidth="150.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Gerar Relatório" />
+    <Button fx:id="carregarDadosButton" layoutX="20.0" layoutY="400.0" prefWidth="150.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Carregar Dados" />
+    <Button fx:id="gerarRelatorioButton" layoutX="200.0" layoutY="400.0" prefWidth="150.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Gerar Relatório" />
 
     <!-- Botão Voltar na parte superior esquerda -->
     <Button fx:id="voltarButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #1f8fe8; -fx-background-radius: 10;" text="Voltar" textFill="WHITE">

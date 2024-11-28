@@ -1,5 +1,6 @@
 package br.edu.univasf;
 
+import br.edu.univasf.utils.CreateTables;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,6 +15,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Iniciando o programa com a tela de Login
+        CreateTables.createCliente();
+        CreateTables.createPacote();
+        CreateTables.createReserva();
         stage = primaryStage;
         switchScreen("login");
     }
@@ -34,6 +38,7 @@ public class Main extends Application {
 
     // Função principal que inicia o aplicativo
     public static void main(String[] args) {
+
         launch(args);
     }
 }

@@ -6,33 +6,31 @@ public class Pacote {
     private Integer id;
     private String nome;
     private String destino;
-    private Date datainicio;
-    private Date datafim;
-    private String preco;
+    private Double preco;
     private String descricao;
-    private String itinerario;
-    private int num_vagas;
+    private int duracao;
     private boolean transporte;
     private String hospedagem;
+    private String itinerario;
+//    private int num_vagas;
+//    private Date datainicio;
+//    private Date datafim;
 
     // Construtores
     public Pacote() {
     }
 
-    public Pacote(String nome, String destino, Date datainicio, Date datafim, String preco,
-                  String itinerario, int num_vagas, boolean transporte, String hospedagem,
-                  String descricao) {
+    public Pacote(String nome, String destino, Double preco, String descricao, int duracao, boolean transporte, String hospedagem, String itinerario) {
         this.nome = nome;
         this.destino = destino;
-        this.datainicio = datainicio;
-        this.datafim = datafim;
         this.preco = preco;
-        this.itinerario = itinerario;
-        this.num_vagas = num_vagas;
+        this.descricao = descricao;
+        this.duracao = duracao;
         this.transporte = transporte;
         this.hospedagem = hospedagem;
-        this.descricao = descricao;
+        this.itinerario = itinerario;
     }
+
 
     // Getters e Setters
     public Integer getId() {
@@ -59,27 +57,11 @@ public class Pacote {
         this.destino = destino;
     }
 
-    public Date getDatainicio() {
-        return datainicio;
-    }
-
-    public void setDatainicio(Date datainicio) {
-        this.datainicio = datainicio;
-    }
-
-    public Date getDatafim() {
-        return datafim;
-    }
-
-    public void setDatafim(Date datafim) {
-        this.datafim = datafim;
-    }
-
-    public String getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
@@ -89,22 +71,6 @@ public class Pacote {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public String getItinerario() {
-        return itinerario;
-    }
-
-    public void setItinerario(String itinerario) {
-        this.itinerario = itinerario;
-    }
-
-    public int getNum_vagas() {
-        return num_vagas;
-    }
-
-    public void setNum_vagas(int num_vagas) {
-        this.num_vagas = num_vagas;
     }
 
     public boolean isTransporte() {
@@ -122,4 +88,12 @@ public class Pacote {
     public void setHospedagem(String hospedagem) {
         this.hospedagem = hospedagem;
     }
+
+    public int getDuracao() {return duracao; }
+
+    public void setDuracao(int duracao) {this.duracao = duracao; }
+
+    public String getItinerario() {return itinerario;}
+
+    public void setItinerario(String itinerario) {this.itinerario = itinerario;}
 }

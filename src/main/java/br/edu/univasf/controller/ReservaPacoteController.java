@@ -7,6 +7,7 @@ import br.edu.univasf.dao.reservaDAO;
 import br.edu.univasf.model.Cliente;
 import br.edu.univasf.model.Pacote;
 import br.edu.univasf.model.Reserva;
+import br.edu.univasf.utils.Session;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -112,22 +113,38 @@ public class ReservaPacoteController implements Initializable {
                     pacote.getId(),                      // ID do pacote
                     cliente.getNome(),                   // Nome do cliente
                     cliente.getCpf(),                    // Usando o CPF do cliente
-                    dataReservaPicker.getValue()         // Data da reserva
-            );
+                    dataReservaPicker.getValue(),        // Data da reserva
+                    false); // Status de pagamento, inicialmente 'false'
 
             // Insere a reserva no banco de dados
             try {
                 reservaDAO.insert_reserva(reserva); // Tenta salvar a reserva no banco
 
-                // Exibe um alerta de sucesso
+// Exibe um alerta de sucesso
                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                 successAlert.setTitle("Notificação");
                 successAlert.setHeaderText(null);
                 successAlert.setContentText("O Pacote foi reservado com sucesso!");
-                successAlert.show();
+                successAlert.showAndWait();
 
-                // Limpa os campos após a reserva
-                limparCampos();
+// Exibe um diálogo de confirmação
+                Alert nextStepAlert = new Alert(Alert.AlertType.CONFIRMATION);
+                nextStepAlert.setTitle("Próximo Passo");
+                nextStepAlert.setHeaderText("Deseja fazer outra reserva ou ir para a tela de pagamento?");
+                nextStepAlert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
+
+                nextStepAlert.showAndWait().ifPresent(response -> {
+                    if (response == ButtonType.YES) {
+                        // Limpa os campos e permite nova reserva
+                        limparCampos();
+                    } else if (response == ButtonType.NO) {
+                        // Salva o cliente na sessão
+                        Session.setCliente(cliente);
+
+                        // Navega para a tela de pagamento
+                        Main.switchScreen("gerenciarPagamento");
+                    }
+                });
 
             } catch (SQLException e) {
                 // Exibe um alerta caso ocorra algum erro ao salvar a reserva

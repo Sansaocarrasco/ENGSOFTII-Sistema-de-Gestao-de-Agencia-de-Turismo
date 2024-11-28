@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class clienteDAO {
 
-    // Inserir Cliente
+    // Método para inserir um cliente no banco de dados
     public void insert_cliente(Cliente cliente) {
         Connection conn = new ConnectionFactory().getConnection();
         PreparedStatement preparedStatement;
@@ -24,13 +24,7 @@ public class clienteDAO {
             preparedStatement.setString(7, cliente.getNumero());
             preparedStatement.setString(8, cliente.getEstado());
             preparedStatement.setString(9, cliente.getTelefone());
-
-            // Conversão de LocalDate para java.sql.Date
-            if (cliente.getDataNascimento() != null) {
-                preparedStatement.setDate(10, Date.valueOf(cliente.getDataNascimento()));
-            } else {
-                preparedStatement.setDate(10, null);
-            }
+            preparedStatement.setString(10, cliente.getNascimento());
 
             int rowsInserted = preparedStatement.executeUpdate();
             if (rowsInserted > 0) {
@@ -38,11 +32,56 @@ public class clienteDAO {
             }
 
         } catch (Exception e) {
-            System.out.println("Erro ao inserir cliente: " + e.getMessage());
+            System.out.println(e);
         }
     }
 
-    // Buscar Cliente
+    // Método para buscar cliente por nome
+    public Cliente buscarClientePorNome(String nome) {
+        Cliente cliente = null;
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            conn = new ConnectionFactory().getConnection();
+            String query = "SELECT * FROM cliente WHERE nome = ?";
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, nome);
+
+            resultSet = preparedStatement.executeQuery();
+
+            // Se encontrar um cliente com o nome fornecido
+            if (resultSet.next()) {
+                cliente = new Cliente();
+                cliente.setId(resultSet.getInt("id"));  // Supondo que "id" seja a chave primária
+                cliente.setCpf(resultSet.getString("cpf"));
+                cliente.setNome(resultSet.getString("nome"));
+                cliente.setEmail(resultSet.getString("email"));
+                cliente.setRua(resultSet.getString("rua"));
+                cliente.setBairro(resultSet.getString("bairro"));
+                cliente.setCidade(resultSet.getString("cidade"));
+                cliente.setNumero(resultSet.getString("numero"));
+                cliente.setEstado(resultSet.getString("estado"));
+                cliente.setTelefone(resultSet.getString("telefone"));
+                cliente.setNascimento(resultSet.getString("data_nascimento"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar cliente por nome: " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (preparedStatement != null) preparedStatement.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                System.out.println("Erro ao fechar recursos: " + e.getMessage());
+            }
+        }
+
+        return cliente;  // Retorna o cliente encontrado ou null se não encontrado
+    }
+
     public Cliente buscarClientePorCpf(String cpf) {
         Cliente cliente = null;
         Connection conn = null;
@@ -58,8 +97,6 @@ public class clienteDAO {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                // Corrigindo a criação do Cliente, extraindo os dados do resultSet
-
                 cliente = new Cliente(
                         resultSet.getString("cpf"),
                         resultSet.getString("nome"),
@@ -70,20 +107,9 @@ public class clienteDAO {
                         resultSet.getString("cidade"),
                         resultSet.getString("numero"),
                         resultSet.getString("estado"),
-                        resultSet.getDate("data_nascimento") != null ? resultSet.getDate("data_nascimento").toLocalDate() : null
+                        resultSet.getString("nascimento")
                 );
-                cliente.setId(resultSet.getInt("id"));
-                cliente.setCpf(resultSet.getString("cpf"));
-                cliente.setNome(resultSet.getString("nome"));
-                cliente.setEmail(resultSet.getString("email"));
-                cliente.setRua(resultSet.getString("rua"));
-                cliente.setBairro(resultSet.getString("bairro"));
-                cliente.setCidade(resultSet.getString("cidade"));
-                cliente.setNumero(resultSet.getString("numero"));
-                cliente.setEstado(resultSet.getString("estado"));
-                cliente.setTelefone(resultSet.getString("telefone"));
-                // A data de nascimento precisa ser convertida para LocalDate
-                cliente.setDataNascimento(resultSet.getDate("data_nascimento").toLocalDate());
+                cliente.setId(resultSet.getInt("clienteid"));  // Alterado para 'clienteid'
             }
 
         } catch (SQLException e) {
@@ -100,4 +126,5 @@ public class clienteDAO {
 
         return cliente;
     }
+
 }

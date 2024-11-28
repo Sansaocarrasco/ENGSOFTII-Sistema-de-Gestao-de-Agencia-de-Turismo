@@ -9,14 +9,26 @@ public class Reserva {
     private String nomeCliente;
     private String cpfCliente;  // Alterado para CPF
     private LocalDate datareserva;  // Usando LocalDate para melhor manipulação
+    private boolean statusPagamento;  // Adicionando o status do pagamento
+    private Pacote pacote;  // Novo campo para armazenar o pacote
 
-    public Reserva(String nomePacote, Integer pkfkPacoteID, String nomeCliente, String cpfCliente, LocalDate datareserva) {
+
+    // Atualizado para incluir o statusPagamento
+    public Reserva(String nomePacote, Integer pkfkPacoteID, String nomeCliente, String cpfCliente, LocalDate datareserva, boolean statusPagamento) {
         this.nomePacote = nomePacote;
         this.pkfkPacoteID = pkfkPacoteID;
         this.nomeCliente = nomeCliente;
         this.cpfCliente = cpfCliente;
         this.datareserva = datareserva;
+        this.statusPagamento = statusPagamento;
     }
+    public Pacote getPacote() {
+        return pacote;
+    }
+    public void setPacote(Pacote pacote) {
+        this.pacote = pacote;
+    }
+
 
     public Integer getReservaID() {
         return reservaID;
@@ -47,6 +59,11 @@ public class Reserva {
         return java.sql.Date.valueOf(datareserva);
     }
 
+    public boolean getStatusPagamento() {
+        return statusPagamento;  // Retorna o status do pagamento
+    }
+
+    // Métodos setters
     public void setReservaID(Integer reservaID) {
         this.reservaID = reservaID;
     }
@@ -69,5 +86,9 @@ public class Reserva {
 
     public void setDatareserva(LocalDate datareserva) {
         this.datareserva = datareserva;
+    }
+
+    public void setStatusPagamento(boolean statusPagamento) {
+        this.statusPagamento = statusPagamento;  // Altera o status do pagamento
     }
 }

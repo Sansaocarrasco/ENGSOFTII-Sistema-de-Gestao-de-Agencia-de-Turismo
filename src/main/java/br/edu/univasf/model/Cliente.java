@@ -1,6 +1,6 @@
 package br.edu.univasf.model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Cliente {
     private Integer id;
@@ -13,23 +13,40 @@ public class Cliente {
     private String numero;
     private String estado;
     private String telefone;
-    private LocalDate dataNascimento;
+    private String data_nascimento;
 
-    // Construtor correto
-    public Cliente(String cpf, String nome, String email, String telefone, String rua, String bairro, String cidade, String numero, String estado, LocalDate dataNascimento) {
+
+    public Cliente() {
+    }
+
+    public Cliente(String cpf, String nome, String email, String rua, String bairro, String cidade, String numero, String estado, String telefone, String nascimento) {
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
-        this.telefone = telefone;
         this.rua = rua;
         this.bairro = bairro;
         this.cidade = cidade;
         this.numero = numero;
         this.estado = estado;
-        this.dataNascimento = dataNascimento;
+        this.telefone = telefone;
+        this.data_nascimento = nascimento;
+
     }
 
-    // Getters e Setters (exemplo)
+//    public Cliente(Integer id, String cpf, String nome, String email, String rua, String bairro, String cidade, String numero, String estado, String telefone, Date Nascimento) {
+//        this.id = id;
+//        this.cpf = cpf;
+//        this.nome = nome;
+//        this.email = email;
+//        this.rua = rua;
+//        this.bairro = bairro;
+//        this.cidade = cidade;
+//        this.numero = numero;
+//        this.estado = estado;
+//        this.telefone = telefone;
+//
+//    }
+
     public Integer getId() {
         return id;
     }
@@ -60,22 +77,6 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 
     public String getRua() {
@@ -117,4 +118,16 @@ public class Cliente {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getNascimento() {return data_nascimento;}
+
+    public void setNascimento(String nascimento) {this.data_nascimento = nascimento;}
 }
