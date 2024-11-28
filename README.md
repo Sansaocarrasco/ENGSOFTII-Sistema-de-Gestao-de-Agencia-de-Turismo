@@ -101,6 +101,9 @@ Clique em "Entrar".
 
 Após isso você poderá fazer as operações de adicionar cliente, adicionar pacotes, reservar um pacote, gerar relatórios das reservas e muitas outras funcionalidades.
 
+![image](https://github.com/user-attachments/assets/41fb82df-7982-4597-9fba-0f1b0d1560d0)
+
+
 
 ## Licença
 
