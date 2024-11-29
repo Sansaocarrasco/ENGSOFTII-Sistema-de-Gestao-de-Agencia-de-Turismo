@@ -21,24 +21,24 @@
     </HBox>
 
     <!-- Título da tela -->
-    <Label prefHeight="30.0" prefWidth="205.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #e0e0e0;" text="Pagamento com Cartão de Crédito" />
+    <Label prefHeight="30.0" prefWidth="205.0" alignment="CENTER" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #e0e0e0;" text="Cartão de Crédito" />
 
     <!-- Campos para Cartão de Crédito -->
     <Label style="-fx-text-fill: #e0e0e0;" text="Número do Cartão:" />
-    <TextField fx:id="numeroCartaoField" style="-fx-background-color: #383838; -fx-text-fill: white; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" />
+    <TextField fx:id="numeroCartaoField" />
 
     <Label style="-fx-text-fill: #e0e0e0;" text="Nome do Titular:" />
-    <TextField fx:id="nomeTitularField" style="-fx-background-color: #383838; -fx-text-fill: white; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" />
+    <TextField fx:id="nomeTitularField"  />
 
     <Label style="-fx-text-fill: #e0e0e0;" text="Validade (MM/AAAA):" />
-    <TextField fx:id="validadeField" style="-fx-background-color: #383838; -fx-text-fill: white; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" />
+    <TextField fx:id="validadeField"  />
 
     <Label style="-fx-text-fill: #e0e0e0;" text="CVV:" />
-    <TextField fx:id="cvvField" style="-fx-background-color: #383838; -fx-text-fill: white; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" />
+    <TextField fx:id="cvvField"  />
 
     <!-- ComboBox para selecionar o número de parcelas -->
     <Label style="-fx-text-fill: #e0e0e0;" text="Número de Parcelas:" />
-    <ComboBox fx:id="parcelasComboBox" prefWidth="200" style="-fx-background-color: #383838; -fx-text-fill: white; -fx-border-color: #4e4e4e; -fx-border-width: 1px;">
+    <ComboBox fx:id="parcelasComboBox" prefWidth="200" >
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <Integer fx:value="1" />

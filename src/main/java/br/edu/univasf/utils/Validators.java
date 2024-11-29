@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 
 import java.sql.*;
+import java.time.YearMonth;
 import java.util.Objects;
 
 public class Validators {
@@ -126,7 +127,93 @@ public class Validators {
         alert.showAndWait();
     }
 
+    // Método para exibir alertas
+    private static void exibirAlerta(String mensagem) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erro de Validação");
+        alert.setHeaderText(null);
+        alert.setContentText(mensagem);
+        alert.showAndWait();
+    }
 
+    // Função para validar o número da conta e a agência
+    public static boolean validarContaBancaria(String numeroConta, String agencia) {
+        // Valida se o número da conta e a agência não são vazios e têm o tamanho esperado
+        if (numeroConta == null || agencia == null) {
+            return false;
+        }
 
+        // Verifica se o número da conta e a agência têm o tamanho esperado (exemplo: 6 dígitos para agência e 12 para a conta)
+        if (numeroConta.length() != 12 || agencia.length() != 6) {
+            return false;
+        }
+
+        // Aqui você pode adicionar outras verificações, como verificação de números válidos, etc.
+
+        // Se tudo estiver correto, retorna true
+        return true;
+    }
+
+    // Método para validar o número do cartão usando o algoritmo de Luhn
+    public static boolean validarNumeroCartao(String numeroCartao) {
+        if (numeroCartao == null || !numeroCartao.matches("\\d{13,19}")) {
+            return false; // Verifica se o número contém apenas dígitos e tem o tamanho adequado
+        }
+
+        int soma = 0;
+        boolean alternar = false;
+
+        for (int i = numeroCartao.length() - 1; i >= 0; i--) {
+            int digito = Character.getNumericValue(numeroCartao.charAt(i));
+
+            if (alternar) {
+                digito *= 2;
+                if (digito > 9) {
+                    digito -= 9;
+                }
+            }
+
+            soma += digito;
+            alternar = !alternar;
+        }
+
+        return (soma % 10 == 0);
+    }
+
+    // Método para validar a data de validade
+    public static boolean validarDataValidade(int mes, int ano) {
+        YearMonth dataAtual = YearMonth.now();
+        YearMonth dataValidade = YearMonth.of(ano, mes);
+
+        return dataValidade.isAfter(dataAtual) || dataValidade.equals(dataAtual);
+    }
+
+    // Método para validar o CVV (Código de Segurança)
+    public static boolean validarCVV(String cvv, String bandeira) {
+        if (bandeira.equalsIgnoreCase("Amex")) {
+            return cvv.matches("\\d{4}"); // American Express usa CVV de 4 dígitos
+        }
+        return cvv.matches("\\d{3}"); // Outras bandeiras usam CVV de 3 dígitos
+    }
+
+    // Método principal para validação completa
+    public static boolean validarCartao(String numeroCartao, int mes, int ano, String cvv, String bandeira) {
+        if (!validarNumeroCartao(numeroCartao)) {
+            Validators.mostrarAlerta("Erro de validação", null, "Número do cartão inválido", false );
+            return false;
+        }
+
+        if (!validarDataValidade(mes, ano)) {
+            Validators.mostrarAlerta("Erro de validação", null, "Data de validade inválida ou expirada.", false );
+            return false;
+        }
+
+        if (!validarCVV(cvv, bandeira)) {
+            Validators.mostrarAlerta("Erro de validação", null, "CVV inválido para a bandeira do cartão.", false );
+            return false;
+        }
+
+        return true;
+    }
 }
 

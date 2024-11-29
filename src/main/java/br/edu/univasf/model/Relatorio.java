@@ -8,6 +8,9 @@ public class Relatorio {
     private String dataReserva;
     private Double precoReserva;
     private boolean pagamento;
+    private boolean transporte;
+    private String itinerario;
+
 
     public Relatorio(String nomeCliente, String nomePacote, String cpf, String dataReserva, Double precoReserva, boolean pagamento) {
         this.nomeCliente = nomeCliente;
@@ -16,6 +19,16 @@ public class Relatorio {
         this.dataReserva = dataReserva;
         this.precoReserva = precoReserva;
         this.pagamento = pagamento;
+    }
+
+    public Relatorio(String nomeCliente, String nomePacote, String dataReserva, Double precoReserva, boolean pagamento, boolean transporte, String itinerario) {
+        this.nomeCliente = nomeCliente;
+        this.nomePacote = nomePacote;
+        this.dataReserva = dataReserva;
+        this.precoReserva = precoReserva;
+        this.pagamento = pagamento;
+        this.transporte = transporte;
+        this.itinerario = itinerario;
     }
 
     public String getNomeCliente() {
@@ -64,5 +77,22 @@ public class Relatorio {
 
     public void setPagamento(boolean pagamento) {
         this.pagamento = pagamento;
+    }
+
+
+    public boolean isTransporte() {
+        return transporte;
+    }
+
+    public void setTransporte(boolean transporte) {
+        this.transporte = transporte;
+    }
+
+    public String getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(String itinerario) {
+        this.itinerario = itinerario;
     }
 }

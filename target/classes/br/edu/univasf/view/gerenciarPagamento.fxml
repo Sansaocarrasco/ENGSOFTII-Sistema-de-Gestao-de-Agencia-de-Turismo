@@ -37,17 +37,17 @@
     </Label>
 
     <!-- Tabela para exibir pacotes reservados -->
-    <TableView fx:id="pacotesTableView" prefHeight="200.0" prefWidth="650.0" style="-fx-background-color: #383838; -fx-border-color: #4e4e4e; -fx-border-width: 1px;">
+    <TableView fx:id="pacotesTableView" prefHeight="200.0" prefWidth="650.0">
         <columns>
-            <TableColumn fx:id="nomePacoteColumn" prefWidth="213.0" style="-fx-text-fill: #e0e0e0; -fx-background-color: #505050; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" text="Nome do Pacote" />
-            <TableColumn fx:id="destinoPacoteColumn" prefWidth="242.0" style="-fx-text-fill: #e0e0e0; -fx-background-color: #505050; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" text="Destino" />
-            <TableColumn fx:id="valorPacoteColumn" prefWidth="204.0" style="-fx-text-fill: #e0e0e0; -fx-background-color: #505050; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" text="Valor" />
+            <TableColumn fx:id="nomePacoteColumn" prefWidth="213.0"  text="Nome do Pacote" />
+            <TableColumn fx:id="destinoPacoteColumn" prefWidth="242.0" text="Destino" />
+            <TableColumn fx:id="valorPacoteColumn" prefWidth="204.0"  text="Valor" />
         </columns>
     </TableView>
 
     <!-- Seleção de Forma de Pagamento -->
     <Label style="-fx-text-fill: #e0e0e0;" text="Método de Pagamento:" />
-    <ComboBox fx:id="metodoPagamentoComboBox" prefWidth="200" style="-fx-background-color: #383838; -fx-text-fill: white; -fx-border-color: #4e4e4e; -fx-border-width: 1px;">
+    <ComboBox fx:id="metodoPagamentoComboBox" prefWidth="200" >
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Cartão de Crédito" />

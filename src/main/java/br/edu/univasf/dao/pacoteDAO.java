@@ -1,6 +1,7 @@
 package br.edu.univasf.dao;
 
 import br.edu.univasf.model.Pacote;
+import br.edu.univasf.model.Relatorio;
 import br.edu.univasf.utils.ConnectionFactory;
 
 import java.sql.*;
@@ -149,5 +150,32 @@ public class pacoteDAO {
         }
 
         return pacote;  // Retorna o pacote encontrado ou null se não encontrar
+    }
+
+    public static int buscarIDPacote(String nome) {
+        System.out.println("Nome recebido: " + nome); // Log do parâmetro recebido
+        String query = "SELECT pacoteid FROM pacote WHERE nome = ?";
+        int id = 0;
+
+        try (Connection conn = new ConnectionFactory().getConnection();
+             PreparedStatement statement = conn.prepareStatement(query)) {
+
+            statement.setString(1, nome);
+            System.out.println("Executando query: " + statement); // Log da query preparada
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    id = resultSet.getInt("pacoteid");
+                    System.out.println("ID encontrado: " + id); // Log do resultado encontrado
+                } else {
+                    System.out.println("Nenhum resultado encontrado para o nome: " + nome);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return id;
     }
 }

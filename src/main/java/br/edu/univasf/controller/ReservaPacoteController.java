@@ -133,7 +133,7 @@ public class ReservaPacoteController implements Initializable {
                 // Exibe um diálogo de confirmação
                 Alert nextStepAlert = new Alert(Alert.AlertType.CONFIRMATION);
                 nextStepAlert.setTitle("Próximo Passo");
-                nextStepAlert.setHeaderText("Deseja fazer outra reserva ou ir para a tela de pagamento?");
+                nextStepAlert.setHeaderText("Deseja fazer outra reserva ?");
                 nextStepAlert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
 
                 nextStepAlert.showAndWait().ifPresent(response -> {

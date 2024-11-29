@@ -18,14 +18,16 @@
     </HBox>
 
     <!-- Título da tela -->
-    <Label prefHeight="30.0" prefWidth="205.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #e0e0e0;" text="Pagamento via Boleto" />
+    <Label prefHeight="30.0" alignment="CENTER" prefWidth="205.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #e0e0e0;" text="Boleto" />
 
     <!-- Campos para Boleto -->
     <Label style="-fx-text-fill: #e0e0e0;" text="Número do Boleto:" />
-    <TextField fx:id="numeroBoletoField" style="-fx-background-color: #383838; -fx-text-fill: white; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" />
+    <TextField fx:id="numeroBoletoField"  />
 
     <Label style="-fx-text-fill: #e0e0e0;" text="CPF do Titular:" />
-    <TextField fx:id="cpfBoletoField" style="-fx-background-color: #383838; -fx-text-fill: white; -fx-border-color: #4e4e4e; -fx-border-width: 1px;" />
+    <TextField fx:id="cpfBoletoField"  />
+
+    <Label fx:id="valorTotalLabel"  text="Valor Total: R$ 0,00" />
 
     <!-- Botão para Confirmar Pagamento -->
     <HBox alignment="CENTER" prefHeight="58.0" prefWidth="478.0">

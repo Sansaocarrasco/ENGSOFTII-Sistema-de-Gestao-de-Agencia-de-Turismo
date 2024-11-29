@@ -147,11 +147,15 @@ public class GerenciarPagamentoController implements Initializable {
                             Session.setCliente(cliente);
                             loader = new FXMLLoader(getClass().getResource("/br/edu/univasf/view/pagamentoBoleto.fxml"));
                             root = loader.load();
+                            BoletoController boletoController = loader.getController();
+                            boletoController.setValorTotal(valorTotal);
                             break;
                         case "Transferência Bancária":
                             Session.setCliente(cliente);
                             loader = new FXMLLoader(getClass().getResource("/br/edu/univasf/view/pagamentoTransferencia.fxml"));
                             root = loader.load();
+                            TransferenciaController transferenciaController = loader.getController();
+                            transferenciaController.setValorTotal(valorTotal);
                             break;
                     }
 

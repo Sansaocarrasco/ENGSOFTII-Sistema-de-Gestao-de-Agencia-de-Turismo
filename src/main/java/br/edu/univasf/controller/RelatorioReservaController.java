@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.sql.*;
 
+import static br.edu.univasf.Main.main;
 import static br.edu.univasf.Main.stage;
 
 public class RelatorioReservaController implements Initializable {
@@ -37,7 +38,7 @@ public class RelatorioReservaController implements Initializable {
     @FXML
     private TableColumn<Relatorio, String> colPagamento;
     @FXML
-    public Button carregarDadosButton;
+    public Button gerarItinerarioButton;
     @FXML
     public Button gerarRelatorioButton;
     @FXML
@@ -84,22 +85,14 @@ public class RelatorioReservaController implements Initializable {
         }
             tableRelatorio.setItems(relatorio);
 
-//        for(Relatorio relatorio1: relatorio){
-//            System.out.println("Nome do Cliente: " + relatorio1.getNomeCliente());
-//            System.out.println("Pacote: " + relatorio1.getNomePacote());
-//            System.out.println("CPF: " + relatorio1.getCpf());
-//            System.out.println("Data da Reserva: " + relatorio1.getDataReserva());
-//            System.out.println("Preço: " + relatorio1.getPrecoReserva());
-//            System.out.println("Pagamento: " + (relatorio1.isPagamento() ? "Pago" : "Não Pago"));
-//            System.out.println("--------------------------------");
-//        }
-
-        //List<Relatorio> relatorio = new ArrayList<>();
-
         });
 
         voltarButton.setOnMouseClicked((MouseEvent event) -> {
             Main.switchScreen("opcoes");
+        });
+
+        gerarItinerarioButton.setOnMouseClicked((MouseEvent event) -> {
+            Main.switchScreen("gerarItinerario");
         });
     }
     private void fecha() {

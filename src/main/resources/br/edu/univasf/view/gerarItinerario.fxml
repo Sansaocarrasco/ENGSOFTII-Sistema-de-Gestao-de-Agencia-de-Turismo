@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.univasf.controller.GerarItinerarioController">
+
+    <!-- Botão de Voltar -->
+    <Button fx:id="voltarButton" layoutX="10.0" layoutY="10.0" style="-fx-background-color: #1f8fe8; -fx-background-radius: 10; -fx-text-fill: white;" text="Voltar">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Button>
+
+    <!-- Layout principal -->
+    <VBox alignment="CENTER" spacing="20" layoutY="50.0" prefWidth="700.0">
+
+        <!-- Título -->
+        <Label text="Exibir Itinerário" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+        <!-- Linha com TextFields -->
+        <HBox alignment="CENTER" spacing="15">
+            <TextField fx:id="cpfClienteTextField" promptText="CPF do Cliente" />
+            <TextField fx:id="nomePacoteTextField" promptText="Nome do Pacote" />
+        </HBox>
+
+        <!-- Tabela -->
+        <TableView fx:id="tableRelatorio" prefHeight="290.0" prefWidth="660.0">
+            <columns>
+                <TableColumn fx:id="colNomeCliente" text="Nome do Cliente" prefWidth="180.0" />
+                <TableColumn fx:id="colPacote" text="Pacote" prefWidth="130.0" />
+                <TableColumn fx:id="colDataReserva" text="Data" prefWidth="100.0" />
+                <TableColumn fx:id="colTransporte" text="Transporte" prefWidth="80.0" />
+                <TableColumn fx:id="colItinerario" text="Itinerário" prefWidth="300.0" />
+                <TableColumn fx:id="colPreco" text="Preço" prefWidth="90.0" />
+                <TableColumn fx:id="colPagamento" text="Pagamento" prefWidth="80.0" />
+            </columns>
+        </TableView>
+
+    </VBox>
+
+    <!-- Botão para carregar dados -->
+    <Button fx:id="gerarItinerarioButton" layoutX="20.0" layoutY="450.0" prefWidth="150.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Carregar Dados" />
+
+</AnchorPane>

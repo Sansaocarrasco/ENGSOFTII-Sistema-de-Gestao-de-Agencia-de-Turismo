@@ -3,6 +3,7 @@ package br.edu.univasf.controller;
 import br.edu.univasf.Main;
 import br.edu.univasf.dao.reservaDAO;
 import br.edu.univasf.utils.Session;
+import br.edu.univasf.utils.Validators;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -99,7 +100,7 @@ public class CartaoCreditoController implements Initializable {
         int anoValidade = Integer.parseInt(validadeSplit[1]);
 
         // Valida o cartão de crédito
-        if (ValidadorCartaoController.validarCartao(numeroCartao, mesValidade, anoValidade, cvv, "N/A")) {
+        if (Validators.validarCartao(numeroCartao, mesValidade, anoValidade, cvv, "N/A")) {
             // Se válido, confirma o pagamento
             confirmarPagamento(parcelas);
         } else {

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
@@ -19,6 +20,11 @@ public class TransferenciaController implements Initializable {
     @FXML
     public Button voltarButton;
 
+    public double valorTotal;
+
+    @FXML
+    public Label valorTotalLabel;
+
     @FXML
     private Button confirmarTransferenciaButton; // Botão para confirmar pagamento
 
@@ -30,6 +36,7 @@ public class TransferenciaController implements Initializable {
 
     @FXML
     private TextField cpfTitularField; // Campo para CPF do titular
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -44,6 +51,11 @@ public class TransferenciaController implements Initializable {
         voltarButton.setOnMouseClicked((MouseEvent event) -> {
             Main.switchScreen("gerenciarPagamento");
         });
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+        valorTotalLabel.setText("Valor Total: R$ " + String.format("%.2f", valorTotal));
     }
 
     private void preencherCpfTitular() {

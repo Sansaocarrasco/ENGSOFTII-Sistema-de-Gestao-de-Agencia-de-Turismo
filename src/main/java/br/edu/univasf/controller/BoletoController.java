@@ -5,6 +5,7 @@ import br.edu.univasf.utils.Session;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
@@ -16,6 +17,11 @@ public class BoletoController {
 
     @FXML
     public Button voltarButton;
+
+    public double valorTotal;
+
+    @FXML
+    public Label valorTotalLabel;
 
     @FXML
     private TextField numeroBoletoField;
@@ -65,5 +71,9 @@ public class BoletoController {
         voltarButton.setOnMouseClicked((MouseEvent event) -> {
             Main.switchScreen("gerenciarPagamento");
         });
+    }
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+        valorTotalLabel.setText("Valor Total: R$ " + String.format("%.2f", valorTotal));
     }
 }

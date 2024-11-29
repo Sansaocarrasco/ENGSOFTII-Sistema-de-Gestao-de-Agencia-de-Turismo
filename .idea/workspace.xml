@@ -6,6 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="b5735cbc-2b15-4f41-b903-1f3fb757dac1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/BoletoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/BoletoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CartaoCreditoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/CartaoCreditoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/GerenciarPagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/GerenciarPagamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/JP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/RelatorioReservaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/RelatorioReservaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/ReservaPacoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/ReservaPacoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/TransferenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/TransferenciaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/ValidadorCartaoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/controller/ValidadorContaBancariaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/pacoteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/dao/pacoteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Relatorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/model/Relatorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/Validators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/univasf/utils/Validators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/gerenciarPagamento.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/gerenciarPagamento.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/pagamentoBoleto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/pagamentoBoleto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/pagamentoCartao.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/pagamentoCartao.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/pagamentoTransferencia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/pagamentoTransferencia.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/relatorioReserva.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/univasf/view/relatorioReserva.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -60,35 +78,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CadastroCliente.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Control.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Control2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Login.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Opcoes.executor&quot;: &quot;Run&quot;,
-    &quot;Application.br.edu.univasf.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.com.example.demo.Login.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;23&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/erica/Downloads/openjfx-23.0.1_windows-x64_bin-sdk.zip&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CadastroCliente.executor": "Run",
+    "Application.Control.executor": "Run",
+    "Application.Control2.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Login.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Opcoes.executor": "Run",
+    "Application.br.edu.univasf.Main.executor": "Run",
+    "Application.com.example.demo.Login.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "23",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/erica/OneDrive/Documentos/Eng_Soft_2/Trabalho2/ENGSOFTII-Sistema-de-Gestao-de-Agencia-de-Turismo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\joaop\IdeaProjects\loginscreen" />
@@ -98,6 +116,9 @@
       <recent name="C:\Users\joaop\IdeaProjects\agencia_turismo\src\main\resources\com\example\demo\view" />
       <recent name="C:\Users\joaop\IdeaProjects\agencia_turismo\src\main\java\com\example\demo\view" />
       <recent name="C:\Users\joaop\IdeaProjects\loginscreen" />
+    </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="br.edu.univasf.utils.Validators" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="br.edu.univasf" />
