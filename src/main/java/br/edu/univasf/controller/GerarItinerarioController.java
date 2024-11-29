@@ -15,8 +15,6 @@ import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.sql.*;
 
@@ -62,7 +60,7 @@ public class GerarItinerarioController implements Initializable {
 
         gerarItinerarioButton.setOnMouseClicked((MouseEvent event) -> {
 
-            String cpfCliente = cpfClienteTextField.getText(); // Remove espaços extras
+            String cpfCliente = cpfClienteTextField.getText().replaceAll("[^0-9]", ""); // Remove qualquer coisa que não seja número
             String nomePacoteQuery = nomePacoteTextField.getText();
 
             // Verifica se os campos estão preenchidos antes de continuar
@@ -70,12 +68,6 @@ public class GerarItinerarioController implements Initializable {
                 Validators.mostrarAlerta("Erro", "Campos obrigatórios vazios", "Preenchar todos os campos necessários", false);
                 return; // Interrompe a execução se os campos estiverem vazios
             }
-
-//            if(Validators.isValidCPF(cpfCliente))
-//            {
-//                Validators.mostrarAlerta("Erro", "CPF inválido", "Forneça um número de cpf válido", false);
-//                return; // Interrompe a execução se os campos estiverem vazios
-//            }
 
             // Chama a função para buscar o ID do pacote
             int pacoteID = pacoteDAO.buscarIDPacote(nomePacoteQuery);
@@ -88,9 +80,10 @@ public class GerarItinerarioController implements Initializable {
 
             ObservableList<Relatorio> relatorio = FXCollections.observableArrayList();
 
+            // Ajuste na consulta SQL
             String query = "SELECT cliente.nome AS cliente, pacote.nome AS pacote, itinerario, transporte, preco, datareserva, statuspagamento " +
                     "FROM cliente, reserva, pacote " +
-                    "WHERE cpfcliente = ? AND cpf = ? AND pkfkpacoteid = ? AND pacoteid = '1'";
+                    "WHERE REPLACE(cliente.cpf, '.', '') = ? AND REPLACE(cliente.cpf, '.', '') = ? AND pkfkpacoteid = ? AND pacoteid = '1'";
 
             try (Connection conn = new ConnectionFactory().getConnection();
                  PreparedStatement preparedStatement = conn.prepareStatement(query)) {
@@ -131,6 +124,7 @@ public class GerarItinerarioController implements Initializable {
         });
 
     }
+
     private void fecha() {
         stage.close();
     }
